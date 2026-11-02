@@ -42,6 +42,12 @@ const EnvelopeModule = (() => {
     // 1. Trigger audio unlock (required by iOS Safari / Android Chrome policy)
     AudioModule.tryPlay();
 
+    // Start hero video playback
+    const heroVid = $('#heroVideo');
+    if (heroVid) {
+      heroVid.play().catch(() => {});
+    }
+
     // 2. Animate overlay out — scale up slightly then fade
     overlay.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
     overlay.style.transform  = 'scale(1.04)';
@@ -213,168 +219,89 @@ const Countdown = (() => {
 })();
 
 /* ═══════════════════════════════════════════════════════════
-   4. SCRATCH CARD
+   4. FALLING PETALS REVEAL
    ═══════════════════════════════════════════════════════════ */
-const ScratchCard = (() => {
-  const canvas  = $('#scratchCanvas');
-  const hint    = $('#scratchHint');
-  const msgBox  = $('#scratchMessage');
+const PetalsReveal = (() => {
+  const container = $('#heartsCard');
+  const btn       = $('#scratchHint');
+  const veil      = $('#petalsVeil');
+  const petalsLayer = $('#petalsLayer');
 
-  let ctx;
-  let isDrawing = false;
-  let revealed  = false;
-  let totalPixels  = 0;
-  let scratchedPixels = 0;
+  let revealed = false;
 
-  // Gold gradient pattern
-  function buildGoldGradient() {
-    const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    grad.addColorStop(0.00, '#B8931F');
-    grad.addColorStop(0.15, '#D4AF37');
-    grad.addColorStop(0.30, '#E8C84A');
-    grad.addColorStop(0.45, '#F5E7B2');
-    grad.addColorStop(0.60, '#D4AF37');
-    grad.addColorStop(0.75, '#C8A85A');
-    grad.addColorStop(0.90, '#B8931F');
-    grad.addColorStop(1.00, '#D4AF37');
-    return grad;
-  }
+  function createPetals() {
+    if (!petalsLayer) return;
+    petalsLayer.innerHTML = '';
 
-  function drawScratchSurface() {
-    // Gold gradient
-    ctx.fillStyle = buildGoldGradient();
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    const types = ['purple', 'rose', 'gold', 'lotus', 'amber', 'jasmine'];
+    const count = 36;
 
-    // Decorative text on the scratch surface
-    ctx.save();
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.fillStyle = 'rgba(0,0,0,0.18)';
-    ctx.font = `bold ${Math.round(canvas.width * 0.06)}px 'Cinzel', serif`;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText('✦ SCRATCH HERE ✦', canvas.width / 2, canvas.height / 2 - 20);
-    ctx.font = `${Math.round(canvas.width * 0.04)}px 'Montserrat', sans-serif`;
-    ctx.fillText('A message from our hearts', canvas.width / 2, canvas.height / 2 + 20);
+    for (let i = 0; i < count; i++) {
+      const petal = document.createElement('div');
+      const type = types[i % types.length];
+      petal.className = `petal petal--${type}`;
 
-    // Shiny shimmer pattern
-    for (let i = 0; i < canvas.width; i += 30) {
-      ctx.strokeStyle = 'rgba(255,255,255,0.12)';
-      ctx.lineWidth = 12;
-      ctx.beginPath();
-      ctx.moveTo(i, 0);
-      ctx.lineTo(i + 60, canvas.height);
-      ctx.stroke();
+      // Distribute across the veil card
+      const left = ((i * 5.7) % 92 + 2).toFixed(1);
+      const top = ((i * 7.3) % 88 + 3).toFixed(1);
+      const delay = ((i * 0.04) % 1.2).toFixed(2);
+      const duration = (2.2 + (i % 6) * 0.25).toFixed(2);
+      const drift = (((i % 2 === 0 ? 1 : -1) * (35 + (i % 4) * 20))).toFixed(0) + 'px';
+      const scale = (0.75 + (i % 5) * 0.12).toFixed(2);
+      const rot = (i * 41) % 360;
+
+      petal.style.left = `${left}%`;
+      petal.style.top = `${top}%`;
+      petal.style.setProperty('--delay', `${delay}s`);
+      petal.style.setProperty('--duration', `${duration}s`);
+      petal.style.setProperty('--drift', drift);
+      petal.style.setProperty('--scale', scale);
+      petal.style.setProperty('--rot', `${rot}deg`);
+
+      petalsLayer.appendChild(petal);
     }
-    ctx.restore();
-
-    totalPixels = canvas.width * canvas.height;
   }
 
-  function scratch(x, y) {
-    ctx.globalCompositeOperation = 'destination-out';
-    ctx.beginPath();
-    ctx.arc(x, y, 30, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Check how much has been scratched (sample every 32px for performance)
-    checkReveal();
-  }
-
-  function checkReveal() {
+  function triggerReveal() {
     if (revealed) return;
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    let cleared = 0;
-    for (let i = 3; i < imageData.data.length; i += 32 * 4) {
-      if (imageData.data[i] < 128) cleared++;
-    }
-    const ratio = cleared / (imageData.data.length / (32 * 4));
-    if (ratio > 0.5) {
-      revealFully();
-    }
-  }
-
-  function revealFully() {
     revealed = true;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    canvas.style.pointerEvents = 'none';
-    if (hint) {
-      hint.style.opacity = '0';
-      hint.style.pointerEvents = 'none';
-    }
-  }
 
-  function getCanvasPos(e) {
-    const rect = canvas.getBoundingClientRect();
-    const scaleX = canvas.width  / rect.width;
-    const scaleY = canvas.height / rect.height;
-    const src = e.touches ? e.touches[0] : e;
-    return {
-      x: (src.clientX - rect.left) * scaleX,
-      y: (src.clientY - rect.top)  * scaleY,
-    };
+    if (container) container.classList.add('revealed');
+    if (veil) veil.classList.add('falling');
+    if (btn) {
+      btn.classList.add('revealed');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+
+    setTimeout(() => {
+      if (veil) veil.style.display = 'none';
+      if (btn) btn.style.display = 'none';
+    }, 2800);
   }
 
   function init() {
-    if (!canvas) return;
+    createPetals();
 
-    // Size canvas to match the message container
-    function resizeCanvas() {
-      if (!msgBox) return;
-      const rect = msgBox.getBoundingClientRect();
-      canvas.width  = rect.width;
-      canvas.height = rect.height;
-      ctx = canvas.getContext('2d');
-      drawScratchSurface();
-    }
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    // Mouse events
-    canvas.addEventListener('mousedown', (e) => {
-      isDrawing = true;
-      if (hint) hint.style.opacity = '0';
-      const pos = getCanvasPos(e);
-      scratch(pos.x, pos.y);
-    });
-
-    canvas.addEventListener('mousemove', (e) => {
-      if (!isDrawing) return;
-      const pos = getCanvasPos(e);
-      scratch(pos.x, pos.y);
-    });
-
-    canvas.addEventListener('mouseup',   () => { isDrawing = false; });
-    canvas.addEventListener('mouseleave',() => { isDrawing = false; });
-
-    // Touch events
-    canvas.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      isDrawing = true;
-      if (hint) hint.style.opacity = '0';
-      const pos = getCanvasPos(e);
-      scratch(pos.x, pos.y);
-    }, { passive: false });
-
-    canvas.addEventListener('touchmove', (e) => {
-      e.preventDefault();
-      if (!isDrawing) return;
-      const pos = getCanvasPos(e);
-      scratch(pos.x, pos.y);
-    }, { passive: false });
-
-    canvas.addEventListener('touchend', () => { isDrawing = false; });
-
-    // Keyboard shortcut: Space/Enter to reveal
-    canvas.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        triggerReveal();
+      });
+      btn.addEventListener('touchend', (e) => {
+        e.stopPropagation();
         e.preventDefault();
-        revealFully();
-      }
-    });
+        triggerReveal();
+      }, { passive: false });
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          triggerReveal();
+        }
+      });
+    }
   }
 
-  return { init };
+  return { init, triggerReveal };
 })();
 
 /* ═══════════════════════════════════════════════════════════
@@ -599,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize modules that don't need envelope opening
   AudioModule.init();
   ScrollTop.init();
-  ScratchCard.init();
+  PetalsReveal.init();
   StoryCarousel.init();
 
   // Envelope opens everything else
@@ -619,16 +546,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ═══════════════════════════════════════════════════════════
-   10. PREVENT CONTEXT MENU ON CANVAS (better UX)
-   ═══════════════════════════════════════════════════════════ */
-document.addEventListener('contextmenu', (e) => {
-  if (e.target.id === 'scratchCanvas') {
-    e.preventDefault();
-  }
-});
-
-/* ═══════════════════════════════════════════════════════════
-   11. HANDLE VISIBILITY CHANGE (pause audio on tab switch)
+   10. HANDLE VISIBILITY CHANGE (pause audio on tab switch)
    ═══════════════════════════════════════════════════════════ */
 document.addEventListener('visibilitychange', () => {
   const audio = $('#wedding-music');

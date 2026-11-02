@@ -66,6 +66,14 @@
 
     <!-- ─── HERO ──────────────────────────────── -->
     <section class="hero-section">
+      <!-- Background Video -->
+      <div class="hero-video-container" aria-hidden="true">
+        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="assets/images/Royal Purple Indian Wedding Arch.png">
+          <source src="assets/images/hero-vid.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
       <div class="hero-top-border"></div>
       <div class="hero-ornament top">❧</div>
 
@@ -195,7 +203,7 @@
           </div>
           <p class="family-address">
             <span class="address-icon">🏡</span>
-            Salem, Tamil Nadu
+            Deoghar, Jharkhand
           </p>
         </div>
       </div>
@@ -342,8 +350,8 @@
         <p class="section-subtitle">Scratch to reveal our message ✨</p>
       </div>
 
-      <div class="scratch-container">
-        <!-- Hidden message (shown beneath canvas) -->
+      <div class="scratch-container" id="heartsCard">
+        <!-- Hidden message (revealed when petals fall) -->
         <div class="scratch-message" id="scratchMessage">
           <div class="scratch-msg-inner">
             <p class="scratch-emoji">💌</p>
@@ -356,9 +364,18 @@
             <p class="scratch-msg-sign">With all our love,<br/><strong>Subash &amp; Manisha</strong></p>
           </div>
         </div>
-        <!-- Scratch overlay canvas -->
-        <canvas id="scratchCanvas" class="scratch-canvas" aria-label="Scratch to reveal a message from the couple" role="img" tabindex="0"></canvas>
-        <p class="scratch-hint" id="scratchHint">
+
+        <!-- Falling Petals Veil Layer -->
+        <div class="petals-veil" id="petalsVeil" aria-hidden="true">
+          <div class="petals-backdrop">
+            <div class="veil-shimmer"></div>
+            <div class="veil-floral-crest">🪷</div>
+          </div>
+          <div class="petals-layer" id="petalsLayer"></div>
+        </div>
+
+        <!-- Reveal Button -->
+        <p class="scratch-hint" id="scratchHint" role="button" tabindex="0" aria-label="Press to reveal our message">
           <span class="hint-finger">👆</span> Scratch here to reveal a message
         </p>
       </div>
