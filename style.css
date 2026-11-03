@@ -1022,7 +1022,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('assets/images/Golden Mandap by the Misty Lake (1).png');
+  background-image: url('assets/images/Golden Mandap by the Misty Lake.png');
   background-size: cover;
   background-position: center;
   opacity: 0.07;
@@ -2250,5 +2250,56 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .scroll-indicator-dot,
   .scroll-indicator-chevron {
     animation: none !important;
+  }
+}
+
+/* ── 20. BACK TO LANGUAGE SELECTION FLOATING PILL ───────── */
+.back-home-pill {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 8888;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 15px;
+  border-radius: var(--radius-pill);
+  background: rgba(30, 10, 20, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  color: var(--gold-light);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(212, 175, 55, 0.25);
+  transition: var(--transition);
+  opacity: 0.9;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back-home-pill:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  border-color: rgba(245, 231, 178, 0.95);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 18px rgba(212, 175, 55, 0.45);
+  color: #FFFDF8;
+}
+
+.back-home-arrow {
+  font-size: 13px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.back-home-pill:hover .back-home-arrow {
+  transform: translateX(-2px);
+}
+
+@media (min-width: 500px) {
+  .back-home-pill {
+    left: calc(50% - (var(--container-max) / 2) + 16px);
   }
 }

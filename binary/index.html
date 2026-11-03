@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#D4AF37" />
+  <meta name="description" content="01010011 01110101 01100010 01100001 01110011 01101000 & 01001101 01100001 01101110 01101001 01110011 01101001 // Subash & Manisha Union.commit() — Feb 10, 2027" />
+  <meta property="og:title" content="01010011 & 01001101 — Binary Wedding Protocol" />
+  <meta property="og:description" content="Subash.connect(Manisha) — Production Release: February 10, 2027, Salem [127.0.0.1]" />
+  <meta property="og:image" content="../assets/images/Subash & Manisha Golden Wedding Logo.png" />
+  <title>01010011 &amp; 01001101 — Binary Wedding Protocol</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    /* Subtle dev/binary touches that preserve luxury wedding aesthetic */
+    .binary-code {
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.5px;
+    }
+    .binary-tag {
+      display: inline-block;
+      font-size: 11px;
+      color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 4px;
+      padding: 2px 7px;
+      margin-bottom: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .binary-comment {
+      color: rgba(245, 231, 178, 0.75);
+      font-style: italic;
+      font-size: 13px;
+    }
+    .code-block-hearts {
+      text-align: left;
+      background: rgba(30, 10, 20, 0.65);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 12px 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: #F8F5EE;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  BACKGROUND AMBIENT (wide screens)          -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-pattern"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  ENVELOPE ENTRY OVERLAY                     -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div id="envelope-overlay" class="envelope-overlay" role="dialog" aria-modal="true" aria-label="Binary Envelope - Tap seal to execute">
+    <div class="envelope-scene">
+
+      <!-- Wax Seal centered on the real envelope image -->
+      <div class="wax-seal" id="waxSeal" role="button" tabindex="0" aria-label="Tap seal to execute wedding protocol">
+        <div class="seal-inner">
+          <span class="seal-names binary-code" style="font-size: 10.5px;">01010011 &amp; 01001101</span>
+          <span class="seal-text binary-code">EXECUTE<br/>MAIN()</span>
+        </div>
+        <div class="seal-ring"></div>
+      </div>
+
+      <p class="envelope-hint binary-code">⚡ Tap the seal to boot wedding runtime ⚡</p>
+    </div>
+  </div><!-- /envelope-overlay -->
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  AUDIO                                      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <audio id="wedding-music" loop preload="auto">
+    <source src="../assets/audio/music.mp3" type="audio/mpeg" />
+    <source src="../assets/audio/wedding-music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Floating Audio Toggle -->
+  <button class="audio-toggle" id="audioToggle" aria-label="Toggle wedding music audio thread" title="Toggle audio stream">
+    <span class="audio-icon" id="audioIcon">♪</span>
+    <span class="audio-ripple"></span>
+  </button>
+
+  <!-- Back to Home Floating Pill -->
+  <a href="../" class="back-home-pill" aria-label="exit(0) - Return to language selector">
+    <span class="back-home-arrow">←</span>
+    <span class="binary-code">exit(0);</span>
+  </a>
+
+  <!-- Subtle Champagne-Gold Scroll Progress Indicator -->
+  <div class="scroll-progress-track" id="scrollProgressTrack" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  MAIN INVITATION CONTENT                    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <main class="invitation-card" id="invitationCard" aria-hidden="true">
+
+    <!-- ─── HERO ──────────────────────────────── -->
+    <section class="hero-section">
+      <!-- Background Video -->
+      <div class="hero-video-container" aria-hidden="true">
+        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="../assets/images/Royal Purple Indian Wedding Arch.png">
+          <source src="../assets/videos/hero-vid.mp4" type="video/mp4" />
+          <source src="../assets/images/hero-vid.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
+      <div class="hero-top-border"></div>
+      <div class="hero-ornament top">❧</div>
+
+      <!-- Temple motif placeholder -->
+      <div class="temple-motif" aria-hidden="true"></div>
+
+      <!-- Sacred verse with humorous developer comments -->
+      <p class="vedic-verse binary-code" style="font-size: 16px;">
+        <em>/* ॥ சுபமண விழா ॥ शुभ विवाह ॥ */</em>
+      </p>
+      <p class="vedic-sub binary-comment">// Exception: LoveNotFoundException resolved with 100% test coverage</p>
+
+      <!-- Subash & Manisha Golden Wedding Logo -->
+      <div class="hero-logo-wrapper" aria-label="Subash & Manisha">
+        <h1 class="sr-only">Subash &amp; Manisha Binary Wedding Protocol</h1>
+        <img src="../assets/images/Subash & Manisha Golden Wedding Logo.png" alt="Subash & Manisha" class="hero-wedding-logo" />
+      </div>
+
+      <!-- Date & Location pill with binary & human formats -->
+      <div class="event-meta">
+        <span class="meta-chip">
+          <span class="chip-icon">📅</span>
+          <span class="binary-code">2027-02-10T09:00Z</span>
+        </span>
+        <span class="meta-chip">
+          <span class="chip-icon">📍</span>
+          <span>Salem, Tamil Nadu [IP::local]</span>
+        </span>
+      </div>
+
+      <!-- Countdown Timer (with binary unit hints) -->
+      <div class="countdown-container" id="countdown" aria-live="polite" aria-label="Countdown to deployment">
+        <div class="countdown-pill">
+          <span class="count-val" id="cntDays">--</span>
+          <span class="count-lbl binary-code">DAYS.bin</span>
+        </div>
+        <div class="countdown-divider">:</div>
+        <div class="countdown-pill">
+          <span class="count-val" id="cntHours">--</span>
+          <span class="count-lbl binary-code">HRS.bin</span>
+        </div>
+        <div class="countdown-divider">:</div>
+        <div class="countdown-pill">
+          <span class="count-val" id="cntMins">--</span>
+          <span class="count-lbl binary-code">MINS.bin</span>
+        </div>
+        <div class="countdown-divider">:</div>
+        <div class="countdown-pill">
+          <span class="count-val" id="cntSecs">--</span>
+          <span class="count-lbl binary-code">SECS.bin</span>
+        </div>
+      </div>
+
+      <!-- Scroll to discover indicator -->
+      <button class="hero-scroll-indicator" id="heroScrollIndicator" type="button" aria-label="Scroll to discover deployment specifications">
+        <span class="scroll-indicator-text binary-code">SCROLL_DOWN()</span>
+        <span class="scroll-indicator-arrow" aria-hidden="true">↓</span>
+        <span class="scroll-indicator-line" aria-hidden="true"></span>
+      </button>
+
+      <div class="hero-ornament bottom">❧</div>
+      <div class="hero-bottom-border"></div>
+    </section>
+
+    <!-- ─── SECTION DIVIDER ────────────────────── -->
+    <div class="section-divider" id="familyDivider" aria-hidden="true">
+      <span class="divider-line"></span>
+      <span class="divider-gem">❖</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <!-- ─── FAMILY SECTION ─────────────────────── -->
+    <section class="family-section" id="familySection">
+      <div class="family-card groom-card">
+        <div class="card-ornament top-left"></div>
+        <div class="card-ornament top-right"></div>
+        <span class="binary-tag">// NODE_01: GROOM CLUSTER</span>
+        <h2 class="family-role">Groom's Node</h2>
+        <h3 class="person-name">Subash</h3>
+        <p class="role-desc binary-code">Master Branch Initiator</p>
+        <div class="parent-divider"></div>
+        <p class="parents-label binary-comment">// Superclasses &amp; Origin Nodes</p>
+        <p class="parent-names">Son of Mr. Sivakumar &amp; Mrs. Sumathi</p>
+        <p class="family-roots binary-comment">// Location: Salem, Tamil Nadu</p>
+        <div class="card-ornament bottom-left"></div>
+        <div class="card-ornament bottom-right"></div>
+      </div>
+
+      <div class="family-union-badge" aria-label="git merge">
+        <span class="badge-ring"></span>
+        <span class="badge-text binary-code">&lt;MERGE&gt;</span>
+      </div>
+
+      <div class="family-card bride-card">
+        <div class="card-ornament top-left"></div>
+        <div class="card-ornament top-right"></div>
+        <span class="binary-tag">// NODE_02: BRIDE CLUSTER</span>
+        <h2 class="family-role">Bride's Node</h2>
+        <h3 class="person-name">Manisha</h3>
+        <p class="role-desc binary-code">Upstream Production Anchor</p>
+        <div class="parent-divider"></div>
+        <p class="parents-label binary-comment">// Superclasses &amp; Origin Nodes</p>
+        <p class="parent-names">Daughter of Mr. Kamlesh Jha &amp; Mrs. Poonam Jha</p>
+        <p class="family-roots binary-comment">// Location: Mithila Traditions</p>
+        <div class="card-ornament bottom-left"></div>
+        <div class="card-ornament bottom-right"></div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION DIVIDER ────────────────────── -->
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-line"></span>
+      <span class="divider-gem">❖</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <!-- ─── EVENTS / SCHEDULE ──────────────────── -->
+    <section class="events-section">
+      <div class="section-header">
+        <span class="section-eyebrow binary-code">THREAD_POOL_EXECUTOR</span>
+        <h2 class="section-title">Execution Timeline</h2>
+        <p class="section-subtitle binary-comment">// Two distinct threads scheduled for February 10, 2027</p>
+      </div>
+
+      <div class="events-timeline">
+
+        <!-- Muhurtham -->
+        <div class="event-card muhurtham-card">
+          <div class="event-time-badge">
+            <span class="event-time binary-code">09:00 - 12:00</span>
+            <span class="event-ampm">IST</span>
+          </div>
+          <div class="event-details">
+            <span class="event-tag binary-code">[THREAD_01]</span>
+            <h3 class="event-name">Sacred Muhurtham</h3>
+            <p class="event-time-full binary-code">09:00 AM – 12:00 PM (Morning Runtime)</p>
+            <p class="event-desc">
+              The sacred Vedic knot tying ritual. Tamil Vedic hymns and Mithila blessings compiled in atomic transaction with zero rollback.
+            </p>
+            <div class="event-meta-row">
+              <span class="event-loc binary-code">📍 Salem, Tamil Nadu</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reception -->
+        <div class="event-card reception-card">
+          <div class="event-time-badge">
+            <span class="event-time binary-code">18:00 - 22:00</span>
+            <span class="event-ampm">IST</span>
+          </div>
+          <div class="event-details">
+            <span class="event-tag binary-code">[THREAD_02]</span>
+            <h3 class="event-name">Grand Reception</h3>
+            <p class="event-time-full binary-code">06:00 PM – 10:00 PM (Evening Runtime)</p>
+            <p class="event-desc">
+              High throughput banquet celebration with music, feast protocols, photo frames, and greetings from both family clusters.
+            </p>
+            <div class="event-meta-row">
+              <span class="event-loc binary-code">📍 Salem, Tamil Nadu</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /events-timeline -->
+
+      <!-- Action Buttons -->
+      <div class="event-actions">
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Subash+%26+Manisha+Binary+Wedding&dates=20270210T090000/20270210T220000&location=Salem%2C+Tamil+Nadu&details=Subash.connect(Manisha)+-+Thread+1%3A+Muhurtham+9AM-12PM%2C+Thread+2%3A+Reception+6PM-10PM"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-primary" aria-label="Schedule to Google Calendar">
+          <span class="btn-icon">📅</span>
+          <span>Schedule to Calendar</span>
+        </a>
+        <a href="https://www.google.com/maps/search/Salem+Tamil+Nadu"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-secondary" aria-label="Resolve Venue GPS Coordinates">
+          <span class="btn-icon">🗺️</span>
+          <span>Resolve GPS Location</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── SECTION DIVIDER ────────────────────── -->
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-line"></span>
+      <span class="divider-gem">❖</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <!-- ─── FROM OUR HEARTS (PETAL REVEAL) ─────── -->
+    <section class="from-hearts-section">
+      <div class="section-header">
+        <span class="section-eyebrow binary-code">PAYLOAD_DECRYPTION</span>
+        <h2 class="section-title">From Our Hearts</h2>
+        <p class="section-subtitle binary-comment">// Encrypted payload awaiting authorization</p>
+      </div>
+
+      <div class="scratch-container" id="heartsCard">
+        <!-- Revealed message underneath -->
+        <div class="scratch-message" id="scratchMessage">
+          <div class="hearts-letterhead">
+            <span class="letterhead-ornament">❧</span>
+            <h3 class="hearts-title binary-code">// Subash &amp; Manisha Manifesto</h3>
+            <span class="letterhead-ornament">❧</span>
+          </div>
+
+          <div class="code-block-hearts">
+            <span style="color:#D4AF37;">/* --- DECRYPTED PAYLOAD --- */</span><br/>
+            <strong>Dear Beloved Friends &amp; Family,</strong><br/><br/>
+            Our journey has been one of courage, countless exceptions caught, and a love that passed every benchmark test. Through every challenge, our connection stayed alive with zero latency.<br/><br/>
+            Today, our distributed architecture has reached 100% consensus across both parent nodes and our two traditions.<br/><br/>
+            <span style="color:#D4AF37;">while</span> (life.isRunning()) {<br/>
+            &nbsp;&nbsp;Subash.love(Manisha);<br/>
+            &nbsp;&nbsp;Manisha.love(Subash);<br/>
+            &nbsp;&nbsp;happiness++;<br/>
+            }<br/><br/>
+            With hearts full of gratitude, we invite you to our production deployment. Your presence is our most essential parameter!<br/><br/>
+            <strong>return new LoveForever(Subash, Manisha);</strong>
+          </div>
+
+          <p class="hearts-signoff">Warmly &amp; Lovingly,</p>
+          <p class="hearts-family">Subash &amp; Manisha</p>
+          <p class="hearts-subfamily binary-comment">// The Sivakumar &amp; Kamlesh Jha Families</p>
+        </div>
+
+        <!-- Falling Petals Veil Layer -->
+        <div class="petals-veil" id="petalsVeil" aria-hidden="true">
+          <div class="petals-layer" id="petalsLayer"></div>
+        </div>
+
+        <!-- Interactive Click-to-Reveal Button -->
+        <p class="scratch-hint" id="scratchHint" role="button" tabindex="0" aria-label="Click to decrypt message">
+          <span class="hint-icon">🌸</span>
+          <span class="hint-text binary-code">DECRYPT PAYLOAD // REVEAL MESSAGE</span>
+          <span class="hint-icon">🌸</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── SECTION DIVIDER ────────────────────── -->
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-line"></span>
+      <span class="divider-gem">❖</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <!-- ─── OUR STORY CAROUSEL ─────────────────── -->
+    <section class="story-section">
+      <div class="section-header">
+        <span class="section-eyebrow binary-code">GIT_LOG --ONELINE</span>
+        <h2 class="section-title">Commits to Forever</h2>
+        <p class="section-subtitle binary-comment">// Version control history of our union</p>
+      </div>
+
+      <div class="carousel-wrapper" id="storyCarousel">
+        <div class="carousel-track" id="carouselTrack">
+
+          <!-- Slide 1 -->
+          <div class="carousel-slide active" role="group" aria-label="Commit 1 of 4: Initial Ping">
+            <div class="slide-card">
+              <span class="slide-badge binary-code">commit 0001: 01010011</span>
+              <div class="slide-icon-wrap">
+                <span class="slide-emoji">💬</span>
+              </div>
+              <h3 class="slide-heading">Initial Ping &amp; Handshake</h3>
+              <p class="slide-text">
+                A simple packet exchange blossomed into hours of infinite connection. Two souls discovering synchronized clocks across different environments.
+              </p>
+              <span class="slide-date binary-code">Status: TCP_ESTABLISHED</span>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-slide" role="group" aria-label="Commit 2 of 4: Infinite Loops">
+            <div class="slide-card">
+              <span class="slide-badge binary-code">commit 0002: 01001101</span>
+              <div class="slide-icon-wrap">
+                <span class="slide-emoji">☕</span>
+              </div>
+              <h3 class="slide-heading">Coffee, Conversations &amp; Loops</h3>
+              <p class="slide-text">
+                Countless shared cups of coffee and endless conversations. We realized our unit tests were happier together than apart.
+              </p>
+              <span class="slide-date binary-code">Status: BUFFER_FULL_OF_JOY</span>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-slide" role="group" aria-label="Commit 3 of 4: Git Merge">
+            <div class="slide-card">
+              <span class="slide-badge binary-code">commit 0003: 01101101</span>
+              <div class="slide-icon-wrap">
+                <span class="slide-emoji">🤝</span>
+              </div>
+              <h3 class="slide-heading">git merge family/subash family/manisha</h3>
+              <p class="slide-text">
+                Two beautiful traditions — Tamil culture and Mithila heritage — merged with 0 merge conflicts, blessed by both family clusters.
+              </p>
+              <span class="slide-date binary-code">Status: FAST_FORWARD_MERGE</span>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-slide" role="group" aria-label="Commit 4 of 4: Production v1.0">
+            <div class="slide-card">
+              <span class="slide-badge binary-code">commit 0004: 01010111</span>
+              <div class="slide-icon-wrap">
+                <span class="slide-emoji">💍</span>
+              </div>
+              <h3 class="slide-heading">Production Release v1.0</h3>
+              <p class="slide-text">
+                February 10, 2027. We launch our lifelong partnership into production with lifetime warranty, love, and laughter.
+              </p>
+              <span class="slide-date binary-code">Status: DEPLOYED_TO_PRODUCTION</span>
+            </div>
+          </div>
+
+        </div><!-- /carousel-track -->
+
+        <!-- Carousel Controls -->
+        <div class="carousel-controls">
+          <button class="carousel-btn prev-btn" id="prevSlide" aria-label="Previous commit">&#8249;</button>
+          <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Story commits">
+            <button class="dot active" role="tab" aria-selected="true" aria-label="Commit 1"></button>
+            <button class="dot" role="tab" aria-selected="false" aria-label="Commit 2"></button>
+            <button class="dot" role="tab" aria-selected="false" aria-label="Commit 3"></button>
+            <button class="dot" role="tab" aria-selected="false" aria-label="Commit 4"></button>
+          </div>
+          <button class="carousel-btn next-btn" id="nextSlide" aria-label="Next commit">&#8250;</button>
+        </div>
+      </div><!-- /carousel-wrapper -->
+    </section>
+
+    <!-- ─── FOOTER ─────────────────────────────── -->
+    <footer class="invitation-footer">
+      <div class="footer-ornament">❧</div>
+
+      <!-- Footer Golden Logo -->
+      <div class="footer-logo-wrapper">
+        <img src="../assets/images/Subash & Manisha Golden Wedding Logo.png" alt="Subash & Manisha" class="footer-wedding-logo" />
+      </div>
+
+      <p class="footer-verse binary-code" style="font-size: 13px;">
+        01010011 01010101 01000010 01000001 01010011 01001000<br/>
+        &amp;<br/>
+        01001101 01000001 01001110 01001001 01010011 01001000 01000001
+      </p>
+
+      <p class="footer-message">
+        "Two hearts, one algorithm, an eternity of happiness."
+      </p>
+
+      <div class="footer-share">
+        <a href="https://wa.me/?text=01010011%2001001101%20--%20Subash%20%26%20Manisha%20Binary%20Wedding%20Protocol%0A%0A%F0%9F%93%85%20Date%3A%20February%2010%2C%202027%0A%F0%9F%93%8D%20Venue%3A%20Salem%2C%20Tamil%20Nadu%0A%0ASubash.connect(Manisha)%20-%20You%20are%20invited%20to%20our%20production%20deployment!"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-share" aria-label="Broadcast wedding protocol via WhatsApp">
+          <span class="share-icon">💬</span>
+          <span>Broadcast via WhatsApp</span>
+        </a>
+      </div>
+
+      <p class="footer-copyright binary-code" style="font-size: 11px;">
+        // Compiled with ❤️ &amp; infinite loop of love.<br/>
+        // 100% tests passed. All rights reserved.
+      </p>
+    </footer>
+
+  </main><!-- /invitation-card -->
+
+  <!-- Scroll-to-Top Button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top" title="Back to top">↑</button>
+
+  <!-- External Script -->
+  <script src="../assets/js/script.js"></script>
+  <script>
+    // Enable seamless local file preview without breaking clean web URLs
+    if (window.location.protocol === 'file:') {
+      var backBtn = document.querySelector('.back-home-pill');
+      if (backBtn && backBtn.getAttribute('href') === '../') {
+        backBtn.setAttribute('href', '../index.html');
+      }
+    }
+  </script>
+</body>
+</html>

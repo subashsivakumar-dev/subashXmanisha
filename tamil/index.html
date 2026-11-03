@@ -7,7 +7,7 @@
   <meta name="description" content="சுபாஷ் & மனிஷா தம்பதியரின் திருமண நன்நாளை கொண்டாட உங்களை அன்புடன் அழைக்கிறோம் - 10 பிப்ரவரி 2027, சேலம், தமிழ்நாடு." />
   <meta property="og:title" content="சுபாஷ் & மனிஷா திருமண அழைப்பிதழ்" />
   <meta property="og:description" content="எங்கள் திருமண நன்நாளில் கலந்து கொண்டு வாழ்த்த அன்புடன் அழைக்கிறோம் - 10 பிப்ரவரி 2027, சேலம், தமிழ்நாடு." />
-  <meta property="og:image" content="assets/images/og-cover.jpg" />
+  <meta property="og:image" content="../assets/images/Subash & Manisha Golden Wedding Logo.png" />
   <title>சுபாஷ் &amp; மனிஷா — திருமண அழைப்பிதழ்</title>
 
   <!-- Google Fonts with Tamil support -->
@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+Tamil:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
 
@@ -49,8 +49,8 @@
   <!--  AUDIO                                      -->
   <!-- ═══════════════════════════════════════════ -->
   <audio id="wedding-music" loop preload="auto">
-    <source src="assets/audio/music.mp3" type="audio/mpeg" />
-    <source src="assets/audio/wedding-music.mp3" type="audio/mpeg" />
+    <source src="../assets/audio/music.mp3" type="audio/mpeg" />
+    <source src="../assets/audio/wedding-music.mp3" type="audio/mpeg" />
   </audio>
 
   <!-- Floating Audio Toggle -->
@@ -58,6 +58,12 @@
     <span class="audio-icon" id="audioIcon">♪</span>
     <span class="audio-ripple"></span>
   </button>
+
+  <!-- Back to Home Floating Pill -->
+  <a href="../" class="back-home-pill" aria-label="மொழி தேர்வுக்கு திரும்புக">
+    <span class="back-home-arrow">←</span>
+    <span>மொழிகள்</span>
+  </a>
 
   <!-- Subtle Champagne-Gold Scroll Progress Indicator -->
   <div class="scroll-progress-track" id="scrollProgressTrack" aria-hidden="true">
@@ -73,8 +79,8 @@
     <section class="hero-section">
       <!-- Background Video -->
       <div class="hero-video-container" aria-hidden="true">
-        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="assets/images/Royal Purple Indian Wedding Arch.png">
-          <source src="assets/images/hero-vid.mp4" type="video/mp4" />
+        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="../assets/images/Royal Purple Indian Wedding Arch.png">
+          <source src="../assets/videos/hero-vid.mp4" type="video/mp4" />
         </video>
         <div class="hero-video-overlay"></div>
       </div>
@@ -94,7 +100,7 @@
       <!-- Subash & Manisha Golden Wedding Logo -->
       <div class="hero-logo-wrapper" aria-label="சுபாஷ் &amp; மனிஷா">
         <h1 class="sr-only">சுபாஷ் &amp; மனிஷா திருமணம்</h1>
-        <img src="assets/images/Subash & Manisha Golden Wedding Logo.png" alt="சுபாஷ் & மனிஷா" class="hero-wedding-logo" />
+        <img src="../assets/images/Subash & Manisha Golden Wedding Logo.png" alt="சுபாஷ் & மனிஷா" class="hero-wedding-logo" />
       </div>
 
       <!-- Date & Location pill -->
@@ -506,7 +512,7 @@
       <div class="footer-ornament" aria-hidden="true">❧</div>
 
       <div class="footer-logo-wrapper" aria-label="சுபாஷ் &amp; மனிஷா">
-        <img src="assets/images/Subash & Manisha Golden Wedding Logo.png" alt="சுபாஷ் & மனிஷா" class="footer-wedding-logo" />
+        <img src="../assets/images/Subash & Manisha Golden Wedding Logo.png" alt="சுபாஷ் & மனிஷா" class="footer-wedding-logo" />
       </div>
 
       <h2 class="footer-title">எங்கள் கொண்டாட்டத்தில் இணையுங்கள்</h2>
@@ -546,6 +552,15 @@
   <!-- Scroll-to-top button -->
   <button class="scroll-top" id="scrollTop" aria-label="மேலே செல்ல" title="மேலே செல்ல">↑</button>
 
-  <script src="script.js"></script>
+  <script src="../assets/js/script.js"></script>
+  <script>
+    // Enable seamless local file preview without breaking clean web URLs
+    if (window.location.protocol === 'file:') {
+      var backBtn = document.querySelector('.back-home-pill');
+      if (backBtn && backBtn.getAttribute('href') === '../') {
+        backBtn.setAttribute('href', '../index.html');
+      }
+    }
+  </script>
 </body>
 </html>

@@ -3,549 +3,637 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#D4AF37" />
-  <meta name="description" content="You are cordially invited to celebrate the wedding of Subash & Manisha — February 10, 2027, Salem, Tamil Nadu." />
+  <meta name="theme-color" content="#7D2637" />
+  <meta name="description" content="Subash & Manisha Wedding — Select Language / மொழியைத் தேர்ந்தெடுக்கவும் / भाषा चुनें / 01010011 01001101" />
   <meta property="og:title" content="Subash & Manisha Wedding Invitation" />
-  <meta property="og:description" content="Join us as we tie the knot — February 10, 2027, Salem, Tamil Nadu." />
-  <meta property="og:image" content="assets/images/og-cover.jpg" />
-  <title>Subash &amp; Manisha — Wedding Invitation</title>
+  <meta property="og:description" content="February 10, 2027 • Salem, Tamil Nadu. Choose your language to explore the celebration." />
+  <meta property="og:image" content="assets/images/Subash & Manisha Golden Wedding Logo.png" />
+  <title>Subash &amp; Manisha Wedding — Welcome</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+Tamil:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --gold:           #D4AF37;
+      --gold-light:     #F5E7B2;
+      --gold-dark:      #B8931F;
+      --gold-pale:      #FFF4D0;
+      --burgundy:       #7D2637;
+      --burgundy-dark:  #4A131F;
+      --charcoal:       #1E1218;
+      --ivory:          #FDFBF7;
+      --container-max:  480px;
+      --font-display:   'Cinzel', serif;
+      --font-serif:     'Cormorant Garamond', serif;
+      --font-body:      'Montserrat', sans-serif;
+      --font-tamil:     'Noto Serif Tamil', serif;
+      --font-hindi:     'Noto Sans Devanagari', sans-serif;
+      --font-mono:      'JetBrains Mono', monospace;
+      --transition:     all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      background-color: #0F060A;
+      font-family: var(--font-body);
+      color: var(--ivory);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient background on widescreen */
+    .ambient-bg {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 25%, rgba(125, 38, 55, 0.38) 0%, transparent 70%),
+        radial-gradient(circle at 50% 85%, rgba(212, 175, 55, 0.16) 0%, transparent 60%),
+        #0C0508;
+      background-size: cover;
+      filter: blur(20px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Centered mobile-first card shell */
+    .landing-shell {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: var(--container-max);
+      min-height: 100vh;
+      min-height: 100dvh;
+      margin: 0 auto;
+      background-color: #170911;
+      background-image:
+        linear-gradient(180deg,
+          rgba(15, 5, 10, 0.55) 0%,
+          rgba(25, 8, 16, 0.40) 30%,
+          rgba(18, 6, 12, 0.65) 70%,
+          rgba(10, 3, 7, 0.94) 100%
+        ),
+        url('assets/images/Golden Mandap by the Misty Lake.png');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 20px 24px;
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.3),
+        0 20px 80px rgba(0, 0, 0, 0.7),
+        0 0 100px rgba(212, 175, 55, 0.12);
+      overflow: hidden;
+    }
+
+    /* Top and bottom golden decorative lines */
+    .gold-border {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.85;
+      flex-shrink: 0;
+    }
+
+    .header-group {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 6px;
+    }
+
+    /* Auspicious Vedic Verse */
+    .sacred-verse {
+      font-family: var(--font-display);
+      font-size: clamp(13px, 3.8vw, 16px);
+      color: var(--gold-light);
+      letter-spacing: 1px;
+      line-height: 1.4;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+      margin-bottom: 4px;
+    }
+
+    .sacred-sub {
+      font-family: var(--font-serif);
+      font-size: 12px;
+      font-style: italic;
+      color: rgba(253, 251, 247, 0.85);
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+      margin-bottom: 10px;
+    }
+
+    /* Couple Golden Logo */
+    .logo-wrapper {
+      width: 78%;
+      max-width: 290px;
+      margin: 2px auto 10px;
+      position: relative;
+    }
+
+    .wedding-logo {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 24px rgba(212, 175, 55, 0.45));
+      animation: logoFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes logoFloat {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+        filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 24px rgba(212, 175, 55, 0.45));
+      }
+      50% {
+        transform: translateY(-6px) scale(1.015);
+        filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 34px rgba(245, 231, 178, 0.65));
+      }
+    }
+
+    /* Event meta pill */
+    .event-chips {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(35, 12, 22, 0.78);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 50px;
+      padding: 5px 15px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      margin-bottom: 6px;
+    }
+
+    .chip-item {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold-light);
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .chip-divider {
+      color: rgba(212, 175, 55, 0.4);
+      font-size: 11px;
+    }
+
+    /* ── LANGUAGE SELECTION SECTION ── */
+    .lang-selection-section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 12px 0;
+    }
+
+    .lang-prompt-title {
+      font-family: var(--font-display);
+      font-size: clamp(13px, 3.6vw, 15px);
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+      margin-bottom: 2px;
+      text-align: center;
+    }
+
+    .lang-prompt-sub {
+      font-family: var(--font-serif);
+      font-size: 11.5px;
+      font-style: italic;
+      color: rgba(253, 251, 247, 0.75);
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .lang-buttons-stack {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    /* ── LANGUAGE BUTTON WITH ORNATE LOTUS EMBLEM BACKGROUND ── */
+    .lang-btn {
+      position: relative;
+      width: 100%;
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      border-radius: 16px;
+      padding: 9px 16px 9px 12px;
+      border: 1.5px solid rgba(212, 175, 55, 0.8);
+      outline: 1px solid rgba(245, 231, 178, 0.25);
+      outline-offset: 2px;
+      box-shadow:
+        0 6px 22px rgba(0, 0, 0, 0.55),
+        0 2px 8px rgba(0, 0, 0, 0.4),
+        0 0 14px rgba(212, 175, 55, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      overflow: hidden;
+      transition:
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Ornate Purple and Gold Lotus Emblem as the button background */
+    .lang-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/images/Ornate Purple and Gold Lotus Emblem.png');
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: brightness(0.72) contrast(1.15) saturate(1.1);
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+      z-index: 0;
+    }
+
+    /* Translucent royal-purple velvet overlay for high contrast readability */
+    .lang-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(35, 8, 18, 0.88) 0%,
+        rgba(50, 12, 26, 0.72) 45%,
+        rgba(25, 6, 14, 0.82) 100%
+      );
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      z-index: 1;
+      transition: background 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      transform: translateY(-2px) scale(1.015);
+      border-color: rgba(255, 244, 208, 1);
+      box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.65),
+        0 0 24px rgba(212, 175, 55, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .lang-btn:hover::before {
+      transform: scale(1.08);
+      filter: brightness(0.85) contrast(1.2) saturate(1.2);
+    }
+
+    .lang-btn:hover::after {
+      background: linear-gradient(
+        105deg,
+        rgba(55, 14, 28, 0.80) 0%,
+        rgba(75, 18, 38, 0.62) 45%,
+        rgba(40, 10, 22, 0.74) 100%
+      );
+    }
+
+    .lang-btn:active {
+      transform: translateY(1px) scale(0.985);
+      box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.5),
+        0 0 12px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Button Content Stack */
+    .btn-left {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Small circular emblem badge on the left */
+    .btn-badge-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.45);
+      background-image: url('assets/images/Ornate Purple and Gold Lotus Emblem.png');
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .btn-badge-icon--binary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(18, 5, 12, 0.8);
+      border-color: #00FF66;
+      box-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+    }
+
+    .btn-text-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+
+    .lang-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFDF8;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
+    }
+
+    .lang-btn--tamil .lang-title {
+      font-family: var(--font-tamil), serif;
+      font-size: 19px;
+    }
+
+    .lang-btn--hindi .lang-title {
+      font-family: var(--font-hindi), sans-serif;
+      font-size: 19px;
+    }
+
+    .lang-btn--en .lang-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      letter-spacing: 2px;
+    }
+
+    .lang-btn--binary .lang-title {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      color: #70FF94;
+      letter-spacing: 0.5px;
+    }
+
+    .lang-tagline {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold-light);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      opacity: 0.92;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .lang-btn--tamil .lang-tagline {
+      font-family: var(--font-tamil);
+      text-transform: none;
+      font-size: 11.5px;
+    }
+
+    .lang-btn--hindi .lang-tagline {
+      font-family: var(--font-hindi);
+      text-transform: none;
+      font-size: 11.5px;
+    }
+
+    .lang-btn--binary .lang-tagline {
+      font-family: var(--font-mono);
+      text-transform: none;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 0.2px;
+    }
+
+    /* Right Arrow Indicator */
+    .btn-arrow-wrap {
+      position: relative;
+      z-index: 2;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      flex-shrink: 0;
+      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .lang-btn:hover .btn-arrow-wrap {
+      transform: translateX(3px);
+      background: rgba(212, 175, 55, 0.3);
+      border-color: var(--gold-light);
+      color: #FFF;
+    }
+
+    .arrow-icon {
+      width: 13px;
+      height: 13px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── FOOTER BLESSINGS ── */
+    .landing-footer {
+      width: 100%;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .footer-blessing {
+      font-family: var(--font-serif);
+      font-size: 12.5px;
+      font-style: italic;
+      color: rgba(253, 251, 247, 0.82);
+      letter-spacing: 0.5px;
+      line-height: 1.45;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+      margin-bottom: 4px;
+    }
+
+    .footer-families {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Accessibility: Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!--  BACKGROUND AMBIENT (wide screens)          -->
-  <!-- ═══════════════════════════════════════════ -->
-  <div class="ambient-bg" aria-hidden="true">
-    <div class="ambient-pattern"></div>
-  </div>
+  <!-- Ambient background glow for wide desktop viewports -->
+  <div class="ambient-bg" aria-hidden="true"></div>
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!--  ENVELOPE ENTRY OVERLAY                     -->
-  <!-- ═══════════════════════════════════════════ -->
-  <div id="envelope-overlay" class="envelope-overlay" role="dialog" aria-modal="true" aria-label="Wedding Invitation Envelope — Tap to open">
-    <div class="envelope-scene">
+  <!-- Main Mobile-First Shell -->
+  <main class="landing-shell">
 
-      <!-- Wax Seal centered on the real envelope image -->
-      <div class="wax-seal" id="waxSeal" role="button" tabindex="0" aria-label="Tap to open the invitation">
-        <div class="seal-inner">
-          <span class="seal-names">Subash &amp; Manisha</span>
-          <span class="seal-text">TAP TO<br/>OPEN</span>
-        </div>
-        <div class="seal-ring"></div>
+    <!-- Top Gold Decorative Line -->
+    <div class="gold-border" aria-hidden="true"></div>
+
+    <!-- Header Section with Logo and Verse -->
+    <header class="header-group">
+      <p class="sacred-verse">॥ சுபமண விழா ॥ शुभ विवाह ॥</p>
+      <p class="sacred-sub">With the blessings of God &amp; our beloved families</p>
+
+      <!-- Couple Wedding Logo -->
+      <div class="logo-wrapper" aria-label="Subash & Manisha">
+        <img src="assets/images/Subash & Manisha Golden Wedding Logo.png" alt="Subash & Manisha Wedding Logo" class="wedding-logo" />
       </div>
 
-      <p class="envelope-hint">✦ Touch the seal to open ✦</p>
-    </div>
-  </div><!-- /envelope-overlay -->
-
-  <!-- ═══════════════════════════════════════════ -->
-  <!--  AUDIO                                      -->
-  <!-- ═══════════════════════════════════════════ -->
-  <audio id="wedding-music" loop preload="auto">
-    <source src="assets/audio/music.mp3" type="audio/mpeg" />
-    <source src="assets/audio/wedding-music.mp3" type="audio/mpeg" />
-  </audio>
-
-  <!-- Floating Audio Toggle -->
-  <button class="audio-toggle" id="audioToggle" aria-label="Toggle wedding music" title="Toggle music">
-    <span class="audio-icon" id="audioIcon">♪</span>
-    <span class="audio-ripple"></span>
-  </button>
-
-  <!-- Subtle Champagne-Gold Scroll Progress Indicator -->
-  <div class="scroll-progress-track" id="scrollProgressTrack" aria-hidden="true">
-    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════ -->
-  <!--  MAIN INVITATION CONTENT                    -->
-  <!-- ═══════════════════════════════════════════ -->
-  <main class="invitation-card" id="invitationCard" aria-hidden="true">
-
-    <!-- ─── HERO ──────────────────────────────── -->
-    <section class="hero-section">
-      <!-- Background Video -->
-      <div class="hero-video-container" aria-hidden="true">
-        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="assets/images/Royal Purple Indian Wedding Arch.png">
-          <source src="assets/images/hero-vid.mp4" type="video/mp4" />
-        </video>
-        <div class="hero-video-overlay"></div>
-      </div>
-
-      <div class="hero-top-border"></div>
-      <div class="hero-ornament top">❧</div>
-
-      <!-- Temple motif placeholder -->
-      <div class="temple-motif" aria-hidden="true"></div>
-
-      <!-- Sacred verse in Tamil & Sanskrit -->
-      <p class="vedic-verse">
-        <em>॥ சுபமண விழா ॥ शुभ विवाह ॥</em>
-      </p>
-      <p class="vedic-sub">With the blessings of God &amp; our beloved families</p>
-
-      <!-- Subash & Manisha Golden Wedding Logo -->
-      <div class="hero-logo-wrapper" aria-label="Subash & Manisha">
-        <h1 class="sr-only">Subash &amp; Manisha Wedding</h1>
-        <img src="assets/images/Subash & Manisha Golden Wedding Logo.png" alt="Subash & Manisha" class="hero-wedding-logo" />
-      </div>
-
-      <!-- Date & Location pill -->
-      <div class="event-meta">
-        <span class="meta-chip">
-          <span class="chip-icon">📅</span>
+      <!-- Date and Venue Badges -->
+      <div class="event-chips" aria-label="Wedding Date and Location">
+        <span class="chip-item">
+          <span>📅</span>
           <span>February 10, 2027</span>
         </span>
-        <span class="meta-chip">
-          <span class="chip-icon">📍</span>
+        <span class="chip-divider">•</span>
+        <span class="chip-item">
+          <span>📍</span>
           <span>Salem, Tamil Nadu</span>
         </span>
       </div>
+    </header>
 
-      <!-- Countdown Timer -->
-      <div class="countdown-container" id="countdown" aria-live="polite" aria-label="Countdown to wedding">
-        <div class="countdown-pill">
-          <span class="count-val" id="cntDays">--</span>
-          <span class="count-lbl">Days</span>
-        </div>
-        <div class="countdown-divider">:</div>
-        <div class="countdown-pill">
-          <span class="count-val" id="cntHours">--</span>
-          <span class="count-lbl">Hrs</span>
-        </div>
-        <div class="countdown-divider">:</div>
-        <div class="countdown-pill">
-          <span class="count-val" id="cntMins">--</span>
-          <span class="count-lbl">Mins</span>
-        </div>
-        <div class="countdown-divider">:</div>
-        <div class="countdown-pill">
-          <span class="count-val" id="cntSecs">--</span>
-          <span class="count-lbl">Secs</span>
-        </div>
-      </div>
+    <!-- Language Selection Section -->
+    <section class="lang-selection-section" aria-label="Select Language">
+      <h2 class="lang-prompt-title">Select Language</h2>
+      <p class="lang-prompt-sub">மொழியைத் தேர்ந்தெடுக்கவும் • भाषा चुनें • 01010011</p>
 
-      <!-- Interactive Hero Scroll Indicator -->
-      <button class="hero-scroll-indicator" id="heroScrollIndicator" type="button" aria-label="Scroll to discover wedding invitation details">
-        <span class="scroll-indicator-pill">
-          <span class="scroll-indicator-text">SCROLL TO DISCOVER</span>
-          <span class="scroll-indicator-decor" aria-hidden="true">
-            <span class="scroll-indicator-line">
-              <span class="scroll-indicator-dot"></span>
-            </span>
-            <svg class="scroll-indicator-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none">
-              <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <div class="lang-buttons-stack" role="navigation" aria-label="Language options">
+
+        <!-- 1. ENGLISH BUTTON (Clean URL route: /english/) -->
+        <a href="english/" class="lang-btn lang-btn--en" id="btnEnglish" aria-label="View Wedding Invitation in English">
+          <div class="btn-left">
+            <div class="btn-badge-icon" aria-hidden="true"></div>
+            <div class="btn-text-group">
+              <span class="lang-title">English</span>
+              <span class="lang-tagline">Wedding Invitation</span>
+            </div>
+          </div>
+          <div class="btn-arrow-wrap" aria-hidden="true">
+            <svg class="arrow-icon" viewBox="0 0 24 24">
+              <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
-          </span>
-        </span>
-      </button>
-
-      <div class="hero-bottom-border"></div>
-    </section>
-
-    <!-- ─── DIVIDER ───────────────────────────── -->
-    <div class="section-divider" id="familyDivider" aria-hidden="true">
-      <span class="divider-line"></span>
-      <span class="divider-lotus">🪷</span>
-      <span class="divider-line"></span>
-    </div>
-
-    <!-- ─── BLESSINGS & FAMILY ────────────────── -->
-    <section class="family-section" id="familySection">
-      <div class="section-header">
-        <h2 class="section-title">With the Blessings of</h2>
-        <p class="section-subtitle">our beloved families</p>
-      </div>
-
-      <!-- Groom's Family -->
-      <div class="family-card groom-card">
-        <div class="family-card-accent groom-accent"></div>
-        <div class="family-card-inner">
-          <div class="family-badge">
-            <span class="family-badge-icon">👨‍👩‍👦</span>
-            <span class="family-badge-label">Groom's Family</span>
           </div>
-          <h3 class="family-name groom">Subash</h3>
-          <p class="family-desc">Son of</p>
-          <div class="parents-grid">
-            <div class="parent-item">
-              <span class="parent-role">Father</span>
-              <span class="parent-name">Shri. Sivakumar</span>
-            </div>
-            <div class="parent-divider" aria-hidden="true">&amp;</div>
-            <div class="parent-item">
-              <span class="parent-role">Mother</span>
-              <span class="parent-name">Smt. Sumathi</span>
-            </div>
-          </div>
-          <p class="family-address">
-            <span class="address-icon">🏡</span>
-            Salem, Tamil Nadu
-          </p>
-        </div>
-      </div>
-
-      <!-- Connecting ornament -->
-      <div class="family-connector" aria-hidden="true">
-        <div class="connector-line"></div>
-        <div class="connector-heart">♥</div>
-        <div class="connector-line"></div>
-      </div>
-
-      <!-- Bride's Family -->
-      <div class="family-card bride-card">
-        <div class="family-card-accent bride-accent"></div>
-        <div class="family-card-inner">
-          <div class="family-badge">
-            <span class="family-badge-icon">👨‍👩‍👧</span>
-            <span class="family-badge-label">Bride's Family</span>
-          </div>
-          <h3 class="family-name bride">Manisha</h3>
-          <p class="family-desc">Daughter of</p>
-          <div class="parents-grid">
-            <div class="parent-item">
-              <span class="parent-role">Father</span>
-              <span class="parent-name">Shri. Kamlesh Jha</span>
-            </div>
-            <div class="parent-divider" aria-hidden="true">&amp;</div>
-            <div class="parent-item">
-              <span class="parent-role">Mother</span>
-              <span class="parent-name">Smt. Poonam Jha</span>
-            </div>
-          </div>
-          <p class="family-address">
-            <span class="address-icon">🏡</span>
-            Deoghar, Jharkhand
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── DIVIDER ───────────────────────────── -->
-    <div class="section-divider" aria-hidden="true">
-      <span class="divider-line"></span>
-      <span class="divider-lotus">✦</span>
-      <span class="divider-line"></span>
-    </div>
-
-    <!-- ─── WEDDING DETAILS & SCHEDULE ───────── -->
-    <section class="schedule-section">
-      <div class="section-header">
-        <h2 class="section-title">Wedding Schedule</h2>
-        <p class="section-subtitle">February 10, 2027</p>
-      </div>
-
-      <!-- Mini Calendar -->
-      <div class="mini-calendar" role="img" aria-label="Wedding date calendar: February 10, 2027">
-        <div class="cal-header">
-          <span class="cal-month">February</span>
-          <span class="cal-year">2027</span>
-        </div>
-        <div class="cal-grid">
-          <span class="cal-day-name">Su</span>
-          <span class="cal-day-name">Mo</span>
-          <span class="cal-day-name">Tu</span>
-          <span class="cal-day-name">We</span>
-          <span class="cal-day-name">Th</span>
-          <span class="cal-day-name">Fr</span>
-          <span class="cal-day-name">Sa</span>
-          <!-- Feb 2027 starts on Monday -->
-          <span class="cal-day empty"></span>
-          <span class="cal-day">1</span>
-          <span class="cal-day">2</span>
-          <span class="cal-day">3</span>
-          <span class="cal-day">4</span>
-          <span class="cal-day">5</span>
-          <span class="cal-day">6</span>
-          <span class="cal-day">7</span>
-          <span class="cal-day">8</span>
-          <span class="cal-day">9</span>
-          <span class="cal-day highlight" aria-current="date">10</span>
-          <span class="cal-day">11</span>
-          <span class="cal-day">12</span>
-          <span class="cal-day">13</span>
-          <span class="cal-day">14</span>
-          <span class="cal-day">15</span>
-          <span class="cal-day">16</span>
-          <span class="cal-day">17</span>
-          <span class="cal-day">18</span>
-          <span class="cal-day">19</span>
-          <span class="cal-day">20</span>
-          <span class="cal-day">21</span>
-          <span class="cal-day">22</span>
-          <span class="cal-day">23</span>
-          <span class="cal-day">24</span>
-          <span class="cal-day">25</span>
-          <span class="cal-day">26</span>
-          <span class="cal-day">27</span>
-          <span class="cal-day">28</span>
-        </div>
-      </div>
-
-      <!-- Schedule Events -->
-      <div class="schedule-timeline">
-
-        <div class="timeline-item">
-          <div class="timeline-dot">
-            <span class="timeline-dot-icon">🪔</span>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-card">
-              <div class="timeline-badge">Muhurtham</div>
-              <h3 class="timeline-event">Sacred Muhurtham</h3>
-              <p class="timeline-time">⏰ 9:00 AM – 12:00 PM</p>
-              <p class="timeline-desc">The auspicious wedding ceremony with Vedic rituals, exchange of garlands &amp; sacred vows.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-connector"></div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot">
-            <span class="timeline-dot-icon">🎊</span>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-card">
-              <div class="timeline-badge">Reception</div>
-              <h3 class="timeline-event">Grand Reception</h3>
-              <p class="timeline-time">⏰ 6:00 PM – 10:00 PM</p>
-              <p class="timeline-desc">An evening celebration with dinner, music &amp; memories. All friends &amp; family warmly welcomed.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="schedule-actions">
-        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Subash+%26+Manisha+Wedding&dates=20270210T090000/20270210T220000&location=Salem%2C+Tamil+Nadu&details=You+are+cordially+invited+to+the+wedding+of+Subash+%26+Manisha.+Muhurtham%3A+9AM-12PM%2C+Reception%3A+6PM-10PM"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="action-btn btn-calendar"
-           aria-label="Add wedding to Google Calendar">
-          <span class="btn-icon">📅</span>
-          <span>Add to Calendar</span>
         </a>
-        <a href="https://www.google.com/maps/search/Salem+Tamil+Nadu"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="action-btn btn-directions"
-           aria-label="Get directions to Salem, Tamil Nadu">
-          <span class="btn-icon">🗺️</span>
-          <span>Get Directions</span>
+
+        <!-- 2. TAMIL BUTTON (Clean URL route: /tamil/) -->
+        <a href="tamil/" class="lang-btn lang-btn--tamil" id="btnTamil" aria-label="திருமண அழைப்பிதழ் தமிழில் காண்க">
+          <div class="btn-left">
+            <div class="btn-badge-icon" aria-hidden="true"></div>
+            <div class="btn-text-group">
+              <span class="lang-title">தமிழ்</span>
+              <span class="lang-tagline">திருமண அழைப்பிதழ் • Tamil</span>
+            </div>
+          </div>
+          <div class="btn-arrow-wrap" aria-hidden="true">
+            <svg class="arrow-icon" viewBox="0 0 24 24">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
         </a>
-      </div>
 
-      <!-- Venue Card -->
-      <div class="venue-card">
-        <div class="venue-icon" aria-hidden="true">🏛️</div>
-        <div class="venue-details">
-          <h3 class="venue-name">Wedding Venue</h3>
-          <p class="venue-address">Salem, Tamil Nadu, India</p>
-          <p class="venue-note">Detailed venue address will be shared shortly</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── DIVIDER ───────────────────────────── -->
-    <div class="section-divider" aria-hidden="true">
-      <span class="divider-line"></span>
-      <span class="divider-lotus">🌸</span>
-      <span class="divider-line"></span>
-    </div>
-
-    <!-- ─── SCRATCH CARD ───────────────────────── -->
-    <section class="scratch-section">
-      <div class="section-header">
-        <h2 class="section-title">From Our Hearts</h2>
-        <p class="section-subtitle">Scratch to reveal our message ✨</p>
-      </div>
-
-      <div class="scratch-container" id="heartsCard">
-        <!-- Hidden message (revealed when petals fall) -->
-        <div class="scratch-message" id="scratchMessage">
-          <div class="scratch-msg-inner">
-            <p class="scratch-emoji">💌</p>
-            <h3 class="scratch-msg-title">Dear Beloved,</h3>
-            <p class="scratch-msg-text">
-              Our journey has been one of courage, countless emotions, and a love that stood strong through it all. Through every challenge, we held on to each other, and today, we find ourselves surrounded by the love, blessings, and acceptance of both our families.<br/><br/>
-              As two hearts unite and two beautiful traditions come together, we begin a new chapter filled with hope, joy, and endless love.<br/><br/>
-              With hearts full of gratitude and happiness, we invite you to be a part of our special day. Your presence and blessings would mean the world to us as we celebrate not just our love, but the beautiful coming together of two families, two cultures, and two traditions.
-            </p>
-            <p class="scratch-msg-sign">With all our love,<br/><strong>Subash &amp; Manisha</strong></p>
+        <!-- 3. HINDI BUTTON (Clean URL route: /hindi/) -->
+        <a href="hindi/" class="lang-btn lang-btn--hindi" id="btnHindi" aria-label="विवाह निमंत्रण पत्र हिंदी में देखें">
+          <div class="btn-left">
+            <div class="btn-badge-icon" aria-hidden="true"></div>
+            <div class="btn-text-group">
+              <span class="lang-title">हिंदी</span>
+              <span class="lang-tagline">विवाह निमंत्रण पत्र • Hindi</span>
+            </div>
           </div>
-        </div>
-
-        <!-- Falling Petals Veil Layer -->
-        <div class="petals-veil" id="petalsVeil" aria-hidden="true">
-          <div class="petals-backdrop">
-            <div class="veil-shimmer"></div>
-            <div class="veil-floral-crest">🪷</div>
+          <div class="btn-arrow-wrap" aria-hidden="true">
+            <svg class="arrow-icon" viewBox="0 0 24 24">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
           </div>
-          <div class="petals-layer" id="petalsLayer"></div>
-        </div>
+        </a>
 
-        <!-- Reveal Button -->
-        <p class="scratch-hint" id="scratchHint" role="button" tabindex="0" aria-label="Press to reveal our message">
-          <span class="hint-finger">👆</span> Scratch here to reveal a message
-        </p>
+        <!-- 4. BINARY BUTTON (Clean URL route: /binary/) -->
+        <a href="binary/" class="lang-btn lang-btn--binary" id="btnBinary" aria-label="Binary Humorous Programmer Edition">
+          <div class="btn-left">
+            <div class="btn-badge-icon btn-badge-icon--binary" aria-hidden="true">01</div>
+            <div class="btn-text-group">
+              <span class="lang-title">01010011 • Binary</span>
+              <span class="lang-tagline">cout &lt;&lt; "Wedding"; • Dev Mode</span>
+            </div>
+          </div>
+          <div class="btn-arrow-wrap" aria-hidden="true">
+            <svg class="arrow-icon" viewBox="0 0 24 24">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </a>
+
       </div>
     </section>
 
-    <!-- ─── DIVIDER ───────────────────────────── -->
-    <div class="section-divider" aria-hidden="true">
-      <span class="divider-line"></span>
-      <span class="divider-lotus">✦</span>
-      <span class="divider-line"></span>
-    </div>
-
-    <!-- ─── OUR STORY CAROUSEL ────────────────── -->
-    <section class="story-section">
-      <div class="section-header">
-        <h2 class="section-title">Our Story</h2>
-        <p class="section-subtitle">A journey from two to one</p>
-      </div>
-
-      <div class="carousel-wrapper" id="storyCarousel">
-        <div class="carousel-track" id="carouselTrack">
-
-          <!-- Slide 1 -->
-          <div class="story-slide" data-index="0">
-            <div class="slide-image-container">
-              <div class="slide-image-placeholder">
-                <span class="placeholder-icon">💫</span>
-                <p class="placeholder-text">Photo Coming Soon</p>
-              </div>
-            </div>
-            <div class="slide-content">
-              <span class="slide-chapter">Chapter 1</span>
-              <h3 class="slide-title">First Meeting</h3>
-              <p class="slide-text">Every love story has a beginning — ours was written in the stars. The moment we met, we knew something beautiful was about to unfold.</p>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="story-slide" data-index="1">
-            <div class="slide-image-container">
-              <div class="slide-image-placeholder">
-                <span class="placeholder-icon">🌺</span>
-                <p class="placeholder-text">Photo Coming Soon</p>
-              </div>
-            </div>
-            <div class="slide-content">
-              <span class="slide-chapter">Chapter 2</span>
-              <h3 class="slide-title">Growing Together</h3>
-              <p class="slide-text">Through laughter and tears, through every high and low, we grew stronger together. Our bond deepened with each passing day.</p>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="story-slide" data-index="2">
-            <div class="slide-image-container">
-              <div class="slide-image-placeholder">
-                <span class="placeholder-icon">💍</span>
-                <p class="placeholder-text">Photo Coming Soon</p>
-              </div>
-            </div>
-            <div class="slide-content">
-              <span class="slide-chapter">Chapter 3</span>
-              <h3 class="slide-title">The Proposal</h3>
-              <p class="slide-text">Under a golden sky, with hearts full of love, the question was asked and joyfully answered. Our forever began that very moment.</p>
-            </div>
-          </div>
-
-          <!-- Slide 4 -->
-          <div class="story-slide" data-index="3">
-            <div class="slide-image-container">
-              <div class="slide-image-placeholder">
-                <span class="placeholder-icon">🎊</span>
-                <p class="placeholder-text">Photo Coming Soon</p>
-              </div>
-            </div>
-            <div class="slide-content">
-              <span class="slide-chapter">Chapter 4</span>
-              <h3 class="slide-title">Forever Begins</h3>
-              <p class="slide-text">Now we stand at the threshold of a new chapter — our wedding day. And we can't imagine celebrating it without you by our side.</p>
-            </div>
-          </div>
-
-        </div><!-- /carousel-track -->
-
-        <!-- Carousel Controls -->
-        <div class="carousel-controls">
-          <button class="carousel-btn prev-btn" id="prevSlide" aria-label="Previous story slide">&#8249;</button>
-          <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Story slides">
-            <button class="dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Slide 1: First Meeting"></button>
-            <button class="dot" data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2: Growing Together"></button>
-            <button class="dot" data-slide="2" role="tab" aria-selected="false" aria-label="Slide 3: The Proposal"></button>
-            <button class="dot" data-slide="3" role="tab" aria-selected="false" aria-label="Slide 4: Forever Begins"></button>
-          </div>
-          <button class="carousel-btn next-btn" id="nextSlide" aria-label="Next story slide">&#8250;</button>
-        </div>
-
-      </div><!-- /carousel-wrapper -->
-    </section>
-
-    <!-- ─── DIVIDER ───────────────────────────── -->
-    <div class="section-divider" aria-hidden="true">
-      <span class="divider-line"></span>
-      <span class="divider-lotus">🕊️</span>
-      <span class="divider-line"></span>
-    </div>
-
-    <!-- ─── FOOTER ────────────────────────────── -->
-    <footer class="invitation-footer">
-      <div class="footer-ornament" aria-hidden="true">❧</div>
-
-      <div class="footer-logo-wrapper" aria-label="Subash & Manisha">
-        <img src="assets/images/Subash & Manisha Golden Wedding Logo.png" alt="Subash & Manisha" class="footer-wedding-logo" />
-      </div>
-
-      <h2 class="footer-title">Join Our Celebration</h2>
-
-      <p class="footer-message">
-        Your laughter, your blessings, and your presence are all we could ever wish for.<br/>
-        Come, be a part of our most cherished memory.
+    <!-- Bottom Family Blessings Note -->
+    <footer class="landing-footer">
+      <p class="footer-blessing">
+        Two hearts unite, two cultures blend, and a new journey begins.<br/>
+        We joyfully welcome you to celebrate with us.
       </p>
-
-      <p class="footer-warmly">
-        Warmly &amp; Lovingly,<br/>
-        <strong>Subash &amp; Manisha</strong>
+      <p class="footer-families">
+        Sivakumar &amp; Sumathi • Kamlesh Jha &amp; Poonam Jha
       </p>
-
-      <!-- WhatsApp Share -->
-      <a href="https://wa.me/?text=You+are+cordially+invited+to+the+wedding+of+%F0%9F%92%AB+Subash+%26+Manisha+%F0%9F%92%AB%0A%0A%F0%9F%93%85+Date%3A+February+10%2C+2027%0A%F0%9F%93%8D+Venue%3A+Salem%2C+Tamil+Nadu%0A%0AJoin+us+to+celebrate+their+special+day!+%F0%9F%8C%B8"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="whatsapp-btn"
-         aria-label="Share wedding invitation via WhatsApp">
-        <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        <span>Share via WhatsApp</span>
-      </a>
-
-      <div class="footer-bottom">
-        <p class="footer-made">Made with ❤️ for Subash &amp; Manisha</p>
-        <p class="footer-year">© 2027 — A Celebration of Love</p>
-      </div>
-
-      <div class="footer-ornament bottom" aria-hidden="true">❧</div>
     </footer>
 
-  </main><!-- /invitation-card -->
+    <!-- Bottom Gold Decorative Line -->
+    <div class="gold-border" aria-hidden="true"></div>
 
-  <!-- Scroll-to-top button -->
-  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top" title="Back to top">↑</button>
+  </main>
 
-  <script src="script.js"></script>
+  <script>
+    // Enable seamless local file preview without breaking clean web URLs
+    if (window.location.protocol === 'file:') {
+      document.querySelectorAll('a[href$="/"]').forEach(function(a) {
+        var href = a.getAttribute('href');
+        if (href && !href.startsWith('http') && !href.startsWith('#')) {
+          a.setAttribute('href', href + 'index.html');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
