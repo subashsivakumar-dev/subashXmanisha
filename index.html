@@ -59,6 +59,11 @@
     <span class="audio-ripple"></span>
   </button>
 
+  <!-- Subtle Champagne-Gold Scroll Progress Indicator -->
+  <div class="scroll-progress-track" id="scrollProgressTrack" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
   <!-- ═══════════════════════════════════════════ -->
   <!--  MAIN INVITATION CONTENT                    -->
   <!-- ═══════════════════════════════════════════ -->
@@ -127,19 +132,33 @@
         </div>
       </div>
 
-      <div class="hero-ornament bottom">❧</div>
+      <!-- Interactive Hero Scroll Indicator -->
+      <button class="hero-scroll-indicator" id="heroScrollIndicator" type="button" aria-label="Scroll to discover wedding invitation details">
+        <span class="scroll-indicator-pill">
+          <span class="scroll-indicator-text">SCROLL TO DISCOVER</span>
+          <span class="scroll-indicator-decor" aria-hidden="true">
+            <span class="scroll-indicator-line">
+              <span class="scroll-indicator-dot"></span>
+            </span>
+            <svg class="scroll-indicator-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none">
+              <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </span>
+      </button>
+
       <div class="hero-bottom-border"></div>
     </section>
 
     <!-- ─── DIVIDER ───────────────────────────── -->
-    <div class="section-divider" aria-hidden="true">
+    <div class="section-divider" id="familyDivider" aria-hidden="true">
       <span class="divider-line"></span>
       <span class="divider-lotus">🪷</span>
       <span class="divider-line"></span>
     </div>
 
     <!-- ─── BLESSINGS & FAMILY ────────────────── -->
-    <section class="family-section">
+    <section class="family-section" id="familySection">
       <div class="section-header">
         <h2 class="section-title">With the Blessings of</h2>
         <p class="section-subtitle">our beloved families</p>

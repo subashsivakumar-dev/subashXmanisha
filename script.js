@@ -61,6 +61,7 @@ const EnvelopeModule = (() => {
       audioToggle.classList.add('visible');
       ScrollAnimations.init();
       Countdown.init();
+      ScrollDiscovery.showTrack();
     }, 700);
 
     // 4. Remove from DOM flow
@@ -486,6 +487,75 @@ const ScrollTop = (() => {
 })();
 
 /* ═══════════════════════════════════════════════════════════
+   7b. SCROLL DISCOVERY & PROGRESS
+   ═══════════════════════════════════════════════════════════ */
+const ScrollDiscovery = (() => {
+  const indicator     = $('#heroScrollIndicator');
+  const progressTrack = $('#scrollProgressTrack');
+  const progressBar   = $('#scrollProgressBar');
+
+  function update() {
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    // Disappear indicator gracefully as soon as visitor scrolls
+    if (indicator) {
+      indicator.classList.toggle('faded', scrollY > 40);
+    }
+
+    // Update vertical champagne-gold progress line
+    if (progressBar && docHeight > 0) {
+      const progress = Math.min(100, Math.max(0, (scrollY / docHeight) * 100));
+      progressBar.style.height = `${progress.toFixed(1)}%`;
+    }
+  }
+
+  function scrollToNext() {
+    const nextTarget = $('#familySection') || $('.family-section') || $('#familyDivider');
+    if (!nextTarget) return;
+
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    nextTarget.scrollIntoView({
+      behavior: prefersReduced ? 'auto' : 'smooth',
+      block: 'start'
+    });
+  }
+
+  function showTrack() {
+    if (progressTrack) {
+      progressTrack.classList.add('active');
+    }
+  }
+
+  function init() {
+    if (indicator) {
+      indicator.addEventListener('click', (e) => {
+        e.preventDefault();
+        scrollToNext();
+      });
+
+      indicator.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        scrollToNext();
+      }, { passive: false });
+
+      indicator.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          scrollToNext();
+        }
+      });
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  }
+
+  return { init, showTrack };
+})();
+
+/* ═══════════════════════════════════════════════════════════
    8. APPLY REVEAL CLASSES TO SECTIONS
    ═══════════════════════════════════════════════════════════ */
 function applyRevealClasses() {
@@ -528,6 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ScrollTop.init();
   PetalsReveal.init();
   StoryCarousel.init();
+  ScrollDiscovery.init();
 
   // Envelope opens everything else
   EnvelopeModule.init();
@@ -541,6 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       ScrollAnimations.init();
       Countdown.init();
+      ScrollDiscovery.showTrack();
     }
   }, 5100);
 });

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#7D2637" />
+  <meta name="description" content="Subash & Manisha Wedding - Select Language / மொழியைத் தேர்ந்தெடுக்கவும் / भाषा चुनें" />
+  <title>Subash &amp; Manisha Wedding — Welcome</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --gold:           #D4AF37;
+      --gold-light:     #F5E7B2;
+      --gold-dark:      #B8931F;
+      --gold-pale:      #FFF4D0;
+      --burgundy:       #7D2637;
+      --burgundy-dark:  #4A131F;
+      --charcoal:       #1E1218;
+      --ivory:          #FDFBF7;
+      --container-max:  480px;
+      --font-display:   'Cinzel', serif;
+      --font-serif:     'Cormorant Garamond', serif;
+      --font-body:      'Montserrat', sans-serif;
+      --font-tamil:     'Noto Serif Tamil', serif;
+      --font-hindi:     'Noto Sans Devanagari', sans-serif;
+      --transition:     all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      background-color: #0F060A;
+      font-family: var(--font-body);
+      color: var(--ivory);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient background on widescreen */
+    .ambient-bg {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(125, 38, 55, 0.35) 0%, transparent 70%),
+        radial-gradient(circle at 50% 80%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
+        #0C0508;
+      background-size: cover;
+      filter: blur(20px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Centered mobile-first card shell */
+    .landing-shell {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: var(--container-max);
+      min-height: 100vh;
+      min-height: 100dvh;
+      margin: 0 auto;
+      background-color: #170911;
+      background-image:
+        linear-gradient(180deg,
+          rgba(15, 5, 10, 0.55) 0%,
+          rgba(25, 8, 16, 0.40) 35%,
+          rgba(18, 6, 12, 0.65) 75%,
+          rgba(10, 3, 7, 0.92) 100%
+        ),
+        url('assets/images/Golden Mandap by the Misty Lake.png');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 20px 28px;
+      box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.3),
+        0 20px 80px rgba(0, 0, 0, 0.7),
+        0 0 100px rgba(212, 175, 55, 0.12);
+      overflow: hidden;
+    }
+
+    /* Top and bottom golden decorative lines */
+    .gold-border {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.85;
+      flex-shrink: 0;
+    }
+
+    .header-group {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    /* Auspicious Vedic Verse */
+    .sacred-verse {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 4vw, 17px);
+      color: var(--gold-light);
+      letter-spacing: 1px;
+      line-height: 1.4;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      margin-bottom: 6px;
+    }
+
+    .sacred-sub {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(253, 251, 247, 0.85);
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+      margin-bottom: 16px;
+    }
+
+    /* Couple Golden Logo */
+    .logo-wrapper {
+      width: 82%;
+      max-width: 320px;
+      margin: 4px auto 14px;
+      position: relative;
+    }
+
+    .wedding-logo {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 24px rgba(212, 175, 55, 0.45));
+      animation: logoFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes logoFloat {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+        filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 24px rgba(212, 175, 55, 0.45));
+      }
+      50% {
+        transform: translateY(-6px) scale(1.015);
+        filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 34px rgba(245, 231, 178, 0.65));
+      }
+    }
+
+    /* Event meta pill */
+    .event-chips {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(35, 12, 22, 0.75);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 50px;
+      padding: 6px 16px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      margin-bottom: 6px;
+    }
+
+    .chip-item {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: var(--gold-light);
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .chip-divider {
+      color: rgba(212, 175, 55, 0.4);
+      font-size: 12px;
+    }
+
+    /* ── LANGUAGE SELECTION CARD SECTION ── */
+    .lang-selection-section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 18px 0;
+    }
+
+    .lang-prompt-title {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 3.8vw, 16px);
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .lang-prompt-sub {
+      font-family: var(--font-serif);
+      font-size: 12px;
+      font-style: italic;
+      color: rgba(253, 251, 247, 0.75);
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .lang-buttons-stack {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* ── LANGUAGE BUTTON WITH ORNATE LOTUS EMBLEM BACKGROUND ── */
+    .lang-btn {
+      position: relative;
+      width: 100%;
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      border-radius: 18px;
+      padding: 10px 18px 10px 14px;
+      border: 1.5px solid rgba(212, 175, 55, 0.8);
+      outline: 1px solid rgba(245, 231, 178, 0.25);
+      outline-offset: 2px;
+      box-shadow:
+        0 6px 24px rgba(0, 0, 0, 0.55),
+        0 2px 8px rgba(0, 0, 0, 0.4),
+        0 0 16px rgba(212, 175, 55, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      overflow: hidden;
+      transition:
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Ornate Purple and Gold Lotus Emblem as the button background */
+    .lang-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/images/Ornate Purple and Gold Lotus Emblem.png');
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: brightness(0.72) contrast(1.15) saturate(1.1);
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+      z-index: 0;
+    }
+
+    /* Translucent royal-purple velvet overlay for high contrast readability */
+    .lang-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(35, 8, 18, 0.88) 0%,
+        rgba(50, 12, 26, 0.72) 45%,
+        rgba(25, 6, 14, 0.82) 100%
+      );
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      z-index: 1;
+      transition: background 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      transform: translateY(-3px) scale(1.015);
+      border-color: rgba(255, 244, 208, 1);
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.65),
+        0 0 26px rgba(212, 175, 55, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .lang-btn:hover::before {
+      transform: scale(1.08);
+      filter: brightness(0.85) contrast(1.2) saturate(1.2);
+    }
+
+    .lang-btn:hover::after {
+      background: linear-gradient(
+        105deg,
+        rgba(55, 14, 28, 0.80) 0%,
+        rgba(75, 18, 38, 0.62) 45%,
+        rgba(40, 10, 22, 0.74) 100%
+      );
+    }
+
+    .lang-btn:active {
+      transform: translateY(1px) scale(0.985);
+      box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.5),
+        0 0 12px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Button Content Stack */
+    .btn-left {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* Small circular emblem badge on the left */
+    .btn-badge-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.45);
+      background-image: url('assets/images/Ornate Purple and Gold Lotus Emblem.png');
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .btn-text-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+    }
+
+    .lang-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: #FFFDF8;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
+    }
+
+    .lang-btn--tamil .lang-title {
+      font-family: var(--font-tamil), serif;
+      font-size: 20px;
+    }
+
+    .lang-btn--hindi .lang-title {
+      font-family: var(--font-hindi), sans-serif;
+      font-size: 20px;
+    }
+
+    .lang-btn--en .lang-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .lang-tagline {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold-light);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      opacity: 0.92;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .lang-btn--tamil .lang-tagline {
+      font-family: var(--font-tamil);
+      text-transform: none;
+      font-size: 11.5px;
+    }
+
+    .lang-btn--hindi .lang-tagline {
+      font-family: var(--font-hindi);
+      text-transform: none;
+      font-size: 11.5px;
+    }
+
+    /* Right Arrow Indicator */
+    .btn-arrow-wrap {
+      position: relative;
+      z-index: 2;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      flex-shrink: 0;
+      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .lang-btn:hover .btn-arrow-wrap {
+      transform: translateX(3px);
+      background: rgba(212, 175, 55, 0.3);
+      border-color: var(--gold-light);
+      color: #FFF;
+    }
+
+    .arrow-icon {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── FOOTER BLESSINGS ── */
+    .landing-footer {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .footer-blessing {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(253, 251, 247, 0.82);
+      letter-spacing: 0.5px;
+      line-height: 1.5;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+      margin-bottom: 4px;
+    }
+
+    .footer-families {
+      font-family: var(--font-display);
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Accessibility: Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient background glow for wide desktop viewports -->
+  <div class="ambient-bg" aria-hidden="true"></div>
+
+  <!-- Main Mobile-First Shell -->
+  <main class="landing-shell">
+
+    <!-- Top Gold Decorative Line -->
+    <div class="gold-border" aria-hidden="true"></div>
+
+    <!-- Header Section with Logo and Verse -->
+    <header class="header-group">
+      <p class="sacred-verse">॥ சுபமண விழா ॥ शुभ विवाह ॥</p>
+      <p class="sacred-sub">With the blessings of God &amp; our beloved families</p>
+
+      <!-- Couple Wedding Logo -->
+      <div class="logo-wrapper" aria-label="Subash & Manisha">
+        <img src="assets/images/Subash & Manisha Golden Wedding Logo.png" alt="Subash & Manisha Wedding Logo" class="wedding-logo" />
+      </div>
+
+      <!-- Date and Venue Badges -->
+      <div class="event-chips" aria-label="Wedding Date and Location">
+        <span class="chip-item">
+          <span>📅</span>
+          <span>February 10, 2027</span>
+        </span>
+        <span class="chip-divider">•</span>
+        <span class="chip-item">
+          <span>📍</span>
+          <span>Salem, Tamil Nadu</span>
+        </span>
+      </div>
+    </header>
+
+    <!-- Language Selection Section -->
+    <section class="lang-selection-section" aria-label="Select Language">
+      <h2 class="lang-prompt-title">Select Language</h2>
+      <p class="lang-prompt-sub">மொழியைத் தேர்ந்தெடுக்கவும் • भाषा चुनें</p>
+
+      <div class="lang-buttons-stack" role="navigation" aria-label="Language options">
+
+        <!-- 1. ENGLISH BUTTON (Links to existing index.html) -->
+        <a href="index.html" class="lang-btn lang-btn--en" id="btnEnglish" aria-label="View Wedding Invitation in English">
+          <div class="btn-left">
+            <div class="btn-badge-icon" aria-hidden="true"></div>
+            <div class="btn-text-group">
+              <span class="lang-title">English</span>
+              <span class="lang-tagline">Wedding Invitation</span>
+            </div>
+          </div>
+          <div class="btn-arrow-wrap" aria-hidden="true">
+            <svg class="arrow-icon" viewBox="0 0 24 24">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- 2. TAMIL BUTTON (Links to tamil.html) -->
+        <a href="tamil.html" class="lang-btn lang-btn--tamil" id="btnTamil" aria-label="திருமண அழைப்பிதழ் தமிழில் காண்க">
+          <div class="btn-left">
+            <div class="btn-badge-icon" aria-hidden="true"></div>
+            <div class="btn-text-group">
+              <span class="lang-title">தமிழ்</span>
+              <span class="lang-tagline">திருமண அழைப்பிதழ் • Tamil</span>
+            </div>
+          </div>
+          <div class="btn-arrow-wrap" aria-hidden="true">
+            <svg class="arrow-icon" viewBox="0 0 24 24">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- 3. HINDI BUTTON (Links to hindi.html) -->
+        <a href="hindi.html" class="lang-btn lang-btn--hindi" id="btnHindi" aria-label="विवाह निमंत्रण पत्र हिंदी में देखें">
+          <div class="btn-left">
+            <div class="btn-badge-icon" aria-hidden="true"></div>
+            <div class="btn-text-group">
+              <span class="lang-title">हिंदी</span>
+              <span class="lang-tagline">विवाह निमंत्रण पत्र • Hindi</span>
+            </div>
+          </div>
+          <div class="btn-arrow-wrap" aria-hidden="true">
+            <svg class="arrow-icon" viewBox="0 0 24 24">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Bottom Family Blessings Note -->
+    <footer class="landing-footer">
+      <p class="footer-blessing">
+        Two hearts unite, two cultures blend, and a new journey begins.<br/>
+        We joyfully welcome you to celebrate with us.
+      </p>
+      <p class="footer-families">
+        Sivakumar &amp; Sumathi • Kamlesh Jha &amp; Poonam Jha
+      </p>
+    </footer>
+
+    <!-- Bottom Gold Decorative Line -->
+    <div class="gold-border" aria-hidden="true"></div>
+
+  </main>
+
+</body>
+</html>

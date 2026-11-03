@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#D4AF37" />
+  <meta name="description" content="सुभाष एवं मनीषा के पावन विवाह समारोह में आप सपरिवार सादर आमंत्रित हैं - 10 फ़रवरी 2027, सलेम, तमिलनाडु।" />
+  <meta property="og:title" content="सुभाष & मनीषा विवाह निमंत्रण पत्र" />
+  <meta property="og:description" content="हमारे विवाह के इस पावन उत्सव में सम्मिलित होकर हमें अपना स्नेह एवं शुभाशीष प्रदान करें - 10 फ़रवरी 2027, सलेम, तमिलनाडु।" />
+  <meta property="og:image" content="assets/images/og-cover.jpg" />
+  <title>सुभाष &amp; मनीषा — पावन विवाह निमंत्रण</title>
+
+  <!-- Google Fonts with Devanagari support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+Tamil:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  BACKGROUND AMBIENT (wide screens)          -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-pattern"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  ENVELOPE ENTRY OVERLAY                     -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div id="envelope-overlay" class="envelope-overlay" role="dialog" aria-modal="true" aria-label="विवाह निमंत्रण पत्र - खोलने के लिए स्पर्श करें">
+    <div class="envelope-scene">
+
+      <!-- Wax Seal centered on the real envelope image -->
+      <div class="wax-seal" id="waxSeal" role="button" tabindex="0" aria-label="निमंत्रण पत्र खोलने के लिए सील को स्पर्श करें">
+        <div class="seal-inner">
+          <span class="seal-names">सुभाष &amp; मनीषा</span>
+          <span class="seal-text">खोलने के लिए<br/>स्पर्श करें</span>
+        </div>
+        <div class="seal-ring"></div>
+      </div>
+
+      <p class="envelope-hint">✨ निमंत्रण पत्र खोलने के लिए सील को स्पर्श करें ✨</p>
+    </div>
+  </div><!-- /envelope-overlay -->
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  AUDIO                                      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <audio id="wedding-music" loop preload="auto">
+    <source src="assets/audio/music.mp3" type="audio/mpeg" />
+    <source src="assets/audio/wedding-music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Floating Audio Toggle -->
+  <button class="audio-toggle" id="audioToggle" aria-label="संगीत चालू / बंद करें" title="संगीत">
+    <span class="audio-icon" id="audioIcon">♪</span>
+    <span class="audio-ripple"></span>
+  </button>
+
+  <!-- Subtle Champagne-Gold Scroll Progress Indicator -->
+  <div class="scroll-progress-track" id="scrollProgressTrack" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  MAIN INVITATION CONTENT                    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <main class="invitation-card" id="invitationCard" aria-hidden="true">
+
+    <!-- ─── HERO ──────────────────────────────── -->
+    <section class="hero-section">
+      <!-- Background Video -->
+      <div class="hero-video-container" aria-hidden="true">
+        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="assets/images/Royal Purple Indian Wedding Arch.png">
+          <source src="assets/images/hero-vid.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
+      <div class="hero-top-border"></div>
+      <div class="hero-ornament top">❧</div>
+
+      <!-- Temple motif placeholder -->
+      <div class="temple-motif" aria-hidden="true"></div>
+
+      <!-- Sacred verse in Sanskrit & Tamil -->
+      <p class="vedic-verse">
+        <em>॥ शुभ विवाह ॥ சுபமண விழா ॥</em>
+      </p>
+      <p class="vedic-sub">ईश्वर की असीम अनुकंपा एवं परिजनों के मंगलमय आशीर्वाद से</p>
+
+      <!-- Subash & Manisha Golden Wedding Logo -->
+      <div class="hero-logo-wrapper" aria-label="सुभाष &amp; मनीषा">
+        <h1 class="sr-only">सुभाष &amp; मनीषा विवाह</h1>
+        <img src="assets/images/Subash & Manisha Golden Wedding Logo.png" alt="सुभाष & मनीषा" class="hero-wedding-logo" />
+      </div>
+
+      <!-- Date & Location pill -->
+      <div class="event-meta">
+        <span class="meta-chip">
+          <span class="chip-icon">📅</span>
+          <span>10 फ़रवरी, 2027</span>
+        </span>
+        <span class="meta-chip">
+          <span class="chip-icon">📍</span>
+          <span>सलेम, तमिलनाडु</span>
+        </span>
+      </div>
+
+      <!-- Countdown Timer -->
+      <div class="countdown-container" id="countdown" aria-live="polite" aria-label="विवाह के लिए उल्टी गिनती">
+        <div class="countdown-pill">
+          <span class="count-val" id="cntDays">--</span>
+          <span class="count-lbl">दिन</span>
+        </div>
+        <div class="countdown-divider">:</div>
+        <div class="countdown-pill">
+          <span class="count-val" id="cntHours">--</span>
+          <span class="count-lbl">घंटे</span>
+        </div>
+        <div class="countdown-divider">:</div>
+        <div class="countdown-pill">
+          <span class="count-val" id="cntMins">--</span>
+          <span class="count-lbl">मिनट</span>
+        </div>
+        <div class="countdown-divider">:</div>
+        <div class="countdown-pill">
+          <span class="count-val" id="cntSecs">--</span>
+          <span class="count-lbl">सेकंड</span>
+        </div>
+      </div>
+
+      <!-- Interactive Hero Scroll Indicator -->
+      <button class="hero-scroll-indicator" id="heroScrollIndicator" type="button" aria-label="विवाह विवरण देखने के लिए नीचे स्क्रॉल करें">
+        <span class="scroll-indicator-pill">
+          <span class="scroll-indicator-text">नीचे स्क्रॉल करें</span>
+          <span class="scroll-indicator-decor" aria-hidden="true">
+            <span class="scroll-indicator-line">
+              <span class="scroll-indicator-dot"></span>
+            </span>
+            <svg class="scroll-indicator-chevron" width="14" height="8" viewBox="0 0 14 8" fill="none">
+              <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </span>
+      </button>
+
+      <div class="hero-bottom-border"></div>
+    </section>
+
+    <!-- ─── DIVIDER ───────────────────────────── -->
+    <div class="section-divider" id="familyDivider" aria-hidden="true">
+      <span class="divider-line"></span>
+      <span class="divider-lotus">🪷</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <!-- ─── BLESSINGS & FAMILY ────────────────── -->
+    <section class="family-section" id="familySection">
+      <div class="section-header">
+        <h2 class="section-title">परम आदरणीय परिजनों के</h2>
+        <p class="section-subtitle">स्नेह एवं मंगल आशीर्वाद से</p>
+      </div>
+
+      <!-- Groom's Family -->
+      <div class="family-card groom-card">
+        <div class="family-card-accent groom-accent"></div>
+        <div class="family-card-inner">
+          <div class="family-badge">
+            <span class="family-badge-icon">👨‍👩‍👦</span>
+            <span class="family-badge-label">वर पक्ष</span>
+          </div>
+          <h3 class="family-name groom">सुभाष</h3>
+          <p class="family-desc">सुपुत्र</p>
+          <div class="parents-grid">
+            <div class="parent-item">
+              <span class="parent-role">पिता</span>
+              <span class="parent-name">श्री शिवकुमार</span>
+            </div>
+            <div class="parent-divider" aria-hidden="true">&amp;</div>
+            <div class="parent-item">
+              <span class="parent-role">माता</span>
+              <span class="parent-name">श्रीमती सुमति</span>
+            </div>
+          </div>
+          <p class="family-address">
+            <span class="address-icon">🏡</span>
+            सलेम, तमिलनाडु
+          </p>
+        </div>
+      </div>
+
+      <!-- Connecting ornament -->
+      <div class="family-connector" aria-hidden="true">
+        <div class="connector-line"></div>
+        <div class="connector-heart">♥</div>
+        <div class="connector-line"></div>
+      </div>
+
+      <!-- Bride's Family -->
+      <div class="family-card bride-card">
+        <div class="family-card-accent bride-accent"></div>
+        <div class="family-card-inner">
+          <div class="family-badge">
+            <span class="family-badge-icon">👨‍👩‍👧</span>
+            <span class="family-badge-label">वधू पक्ष</span>
+          </div>
+          <h3 class="family-name bride">मनीषा</h3>
+          <p class="family-desc">सुपुत्री</p>
+          <div class="parents-grid">
+            <div class="parent-item">
+              <span class="parent-role">पिता</span>
+              <span class="parent-name">श्री कमलेश झा</span>
+            </div>
+            <div class="parent-divider" aria-hidden="true">&amp;</div>
+            <div class="parent-item">
+              <span class="parent-role">माता</span>
+              <span class="parent-name">श्रीमती पूनम झा</span>
+            </div>
+          </div>
+          <p class="family-address">
+            <span class="address-icon">🏡</span>
+            देवघर, झारखंड
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── DIVIDER ───────────────────────────── -->
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-line"></span>
+      <span class="divider-lotus">✦</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <!-- ─── WEDDING DETAILS & SCHEDULE ───────── -->
+    <section class="schedule-section">
+      <div class="section-header">
+        <h2 class="section-title">शुभ विवाह कार्यक्रम</h2>
+        <p class="section-subtitle">10 फ़रवरी, 2027</p>
+      </div>
+
+      <!-- Mini Calendar -->
+      <div class="mini-calendar" role="img" aria-label="विवाह तिथि कैलेंडर: 10 फ़रवरी 2027">
+        <div class="cal-header">
+          <span class="cal-month">फ़रवरी</span>
+          <span class="cal-year">2027</span>
+        </div>
+        <div class="cal-grid">
+          <span class="cal-day-name">रवि</span>
+          <span class="cal-day-name">सोम</span>
+          <span class="cal-day-name">मंगल</span>
+          <span class="cal-day-name">बुध</span>
+          <span class="cal-day-name">गुरु</span>
+          <span class="cal-day-name">शुक्र</span>
+          <span class="cal-day-name">शनि</span>
+          <!-- Feb 2027 starts on Monday -->
+          <span class="cal-day empty"></span>
+          <span class="cal-day">1</span>
+          <span class="cal-day">2</span>
+          <span class="cal-day">3</span>
+          <span class="cal-day">4</span>
+          <span class="cal-day">5</span>
+          <span class="cal-day">6</span>
+          <span class="cal-day">7</span>
+          <span class="cal-day">8</span>
+          <span class="cal-day">9</span>
+          <span class="cal-day highlight" aria-current="date">10</span>
+          <span class="cal-day">11</span>
+          <span class="cal-day">12</span>
+          <span class="cal-day">13</span>
+          <span class="cal-day">14</span>
+          <span class="cal-day">15</span>
+          <span class="cal-day">16</span>
+          <span class="cal-day">17</span>
+          <span class="cal-day">18</span>
+          <span class="cal-day">19</span>
+          <span class="cal-day">20</span>
+          <span class="cal-day">21</span>
+          <span class="cal-day">22</span>
+          <span class="cal-day">23</span>
+          <span class="cal-day">24</span>
+          <span class="cal-day">25</span>
+          <span class="cal-day">26</span>
+          <span class="cal-day">27</span>
+          <span class="cal-day">28</span>
+        </div>
+      </div>
+
+      <!-- Schedule Events -->
+      <div class="schedule-timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <span class="timeline-dot-icon">🪔</span>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-card">
+              <div class="timeline-badge">शुभ मुहूर्त</div>
+              <h3 class="timeline-event">पावन पाणिग्रहण संस्कार</h3>
+              <p class="timeline-time">⏰ प्रातः 9:00 – दोपहर 12:00</p>
+              <p class="timeline-desc">वैदिक मंत्रोच्चार, वरमाला एवं सात फेरों की पावन रस्म।</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-connector"></div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <span class="timeline-dot-icon">🎊</span>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-card">
+              <div class="timeline-badge">प्रीतिभोज</div>
+              <h3 class="timeline-event">भव्य प्रीतिभोज</h3>
+              <p class="timeline-time">⏰ सायं 6:00 – रात्रि 10:00</p>
+              <p class="timeline-desc">संगीत, उल्लास एवं स्वादिष्ट प्रीतिभोज। आप सपरिवार सादर आमंत्रित हैं।</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="schedule-actions">
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Subash+%26+Manisha+Wedding&dates=20270210T090000/20270210T220000&location=Salem%2C+Tamil+Nadu&details=You+are+cordially+invited+to+the+wedding+of+Subash+%26+Manisha.+Muhurtham%3A+9AM-12PM%2C+Reception%3A+6PM-10PM"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="action-btn btn-calendar"
+           aria-label="गूगल कैलेंडर में जोड़ें">
+          <span class="btn-icon">📅</span>
+          <span>कैलेंडर में जोड़ें</span>
+        </a>
+        <a href="https://www.google.com/maps/search/Salem+Tamil+Nadu"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="action-btn btn-directions"
+           aria-label="सलेम, तमिलनाडु के दिशा-निर्देश देखें">
+          <span class="btn-icon">🗺️</span>
+          <span>दिशा-निर्देश देखें</span>
+        </a>
+      </div>
+
+      <!-- Venue Card -->
+      <div class="venue-card">
+        <div class="venue-icon" aria-hidden="true">🏛️</div>
+        <div class="venue-details">
+          <h3 class="venue-name">विवाह स्थल</h3>
+          <p class="venue-address">सलेम, तमिलनाडु, भारत</p>
+          <p class="venue-note">विस्तृत स्थल पता शीघ्र ही साझा किया जाएगा</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── DIVIDER ───────────────────────────── -->
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-line"></span>
+      <span class="divider-lotus">🌸</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <!-- ─── SCRATCH CARD ───────────────────────── -->
+    <section class="scratch-section">
+      <div class="section-header">
+        <h2 class="section-title">हमारे दिल से</h2>
+        <p class="section-subtitle">हमारा संदेश पढ़ने के लिए बटन दबाएं ✨</p>
+      </div>
+
+      <div class="scratch-container" id="heartsCard">
+        <!-- Hidden message (revealed when petals fall) -->
+        <div class="scratch-message" id="scratchMessage">
+          <div class="scratch-msg-inner">
+            <p class="scratch-emoji">💌</p>
+            <h3 class="scratch-msg-title">स्नेही आत्मीयजन,</h3>
+            <p class="scratch-msg-text">
+              हमारा यह सफ़र हिम्मत, अनगिनत अहसासों और हर परिस्थिति में अडिग रहे प्रेम का प्रतीक रहा है। हर चुनौती में हमने एक-दूसरे का हाथ थामे रखा, और आज हम दोनों परिवारों के असीम स्नेह, आशीर्वाद और स्वीकृति से घिरे हैं।<br/><br/>
+              जब दो दिल एक हो रहे हैं और दो सुंदर संस्कृतियाँ व परंपराएँ संग आ रही हैं, हम आशा, हर्ष और अंतहीन प्रेम से भरे नए अध्याय की शुरुआत कर रहे हैं।<br/><br/>
+              कृतज्ञ और प्रफुल्लित हृदय से, हम आपको हमारे इस विशेष दिन का साक्षी बनने हेतु सादर आमंत्रित करते हैं। आपकी गरिमामयी उपस्थिति और शुभाशीष हमारे लिए अमूल्य होंगे जब हम दो परिवारों, दो संस्कृतियों और दो परंपराओं के इस पावन संगम का उत्सव मनाएंगे।
+            </p>
+            <p class="scratch-msg-sign">सस्नेह,<br/><strong>सुभाष &amp; मनीषा</strong></p>
+          </div>
+        </div>
+
+        <!-- Falling Petals Veil Layer -->
+        <div class="petals-veil" id="petalsVeil" aria-hidden="true">
+          <div class="petals-backdrop">
+            <div class="veil-shimmer"></div>
+            <div class="veil-floral-crest">🪷</div>
+          </div>
+          <div class="petals-layer" id="petalsLayer"></div>
+        </div>
+
+        <!-- Reveal Button -->
+        <p class="scratch-hint" id="scratchHint" role="button" tabindex="0" aria-label="संदेश पढ़ने के लिए यहाँ दबाएं">
+          <span class="hint-finger">👆</span> संदेश पढ़ने के लिए यहाँ दबाएं
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── DIVIDER ───────────────────────────── -->
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-line"></span>
+      <span class="divider-lotus">✦</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <!-- ─── OUR STORY CAROUSEL ────────────────── -->
+    <section class="story-section">
+      <div class="section-header">
+        <h2 class="section-title">हमारी कहानी</h2>
+        <p class="section-subtitle">दो दिलों के एक होने का पावन सफ़र</p>
+      </div>
+
+      <div class="carousel-wrapper" id="storyCarousel">
+        <div class="carousel-track" id="carouselTrack">
+
+          <!-- Slide 1 -->
+          <div class="story-slide" data-index="0">
+            <div class="slide-image-container">
+              <div class="slide-image-placeholder">
+                <span class="placeholder-icon">💫</span>
+                <p class="placeholder-text">तस्वीर जल्द आ रही है</p>
+              </div>
+            </div>
+            <div class="slide-content">
+              <span class="slide-chapter">अध्याय 1</span>
+              <h3 class="slide-title">पहली मुलाक़ात</h3>
+              <p class="slide-text">दो राहें मिलीं और हमारी दुनिया बदल गई। एक सामान्य बातचीत से शुरू हुआ यह सिलसिला एक अनमोल और सुंदर रिश्ते में बदल गया।</p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="story-slide" data-index="1">
+            <div class="slide-image-container">
+              <div class="slide-image-placeholder">
+                <span class="placeholder-icon">🌺</span>
+                <p class="placeholder-text">तस्वीर जल्द आ रही है</p>
+              </div>
+            </div>
+            <div class="slide-content">
+              <span class="slide-chapter">अध्याय 2</span>
+              <h3 class="slide-title">साथ-साथ आगे बढ़ते हुए</h3>
+              <p class="slide-text">दिन बीतते गए, हँसी-मज़ाक और सुख-दुःख की साझेदारी ने हमारे बंधन को और गहरा कर दिया। दो अलग संसार एक सुंदर सफ़र बन गए।</p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="story-slide" data-index="2">
+            <div class="slide-image-container">
+              <div class="slide-image-placeholder">
+                <span class="placeholder-icon">💍</span>
+                <p class="placeholder-text">तस्वीर जल्द आ रही है</p>
+              </div>
+            </div>
+            <div class="slide-content">
+              <span class="slide-chapter">अध्याय 3</span>
+              <h3 class="slide-title">इज़हार-ए-मोहब्बत</h3>
+              <p class="slide-text">सुनहरे आसमान के नीचे, सच्चे दिल से एक सवाल पूछा गया और दिल से 'हाँ' का जवाब मिला। हमारा सदाबहार रिश्ता वहीं से शुरू हुआ।</p>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="story-slide" data-index="3">
+            <div class="slide-image-container">
+              <div class="slide-image-placeholder">
+                <span class="placeholder-icon">🎊</span>
+                <p class="placeholder-text">तस्वीर जल्द आ रही है</p>
+              </div>
+            </div>
+            <div class="slide-content">
+              <span class="slide-chapter">अध्याय 4</span>
+              <h3 class="slide-title">सदा के लिए एक</h3>
+              <p class="slide-text">अब हम अपने सबसे ख़ास दिन — अपने विवाह की दहलीज़ पर खड़े हैं। और आपके बिना यह उत्सव अधूरा है।</p>
+            </div>
+          </div>
+
+        </div><!-- /carousel-track -->
+
+        <!-- Carousel Controls -->
+        <div class="carousel-controls">
+          <button class="carousel-btn prev-btn" id="prevSlide" aria-label="पिछला पृष्ठ">&#8249;</button>
+          <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="कहानी पृष्ठ">
+            <button class="dot active" data-slide="0" role="tab" aria-selected="true" aria-label="अध्याय 1: पहली मुलाक़ात"></button>
+            <button class="dot" data-slide="1" role="tab" aria-selected="false" aria-label="अध्याय 2: साथ-साथ आगे बढ़ते हुए"></button>
+            <button class="dot" data-slide="2" role="tab" aria-selected="false" aria-label="अध्याय 3: इज़हार-ए-मोहब्बत"></button>
+            <button class="dot" data-slide="3" role="tab" aria-selected="false" aria-label="अध्याय 4: सदा के लिए एक"></button>
+          </div>
+          <button class="carousel-btn next-btn" id="nextSlide" aria-label="अगला पृष्ठ">&#8250;</button>
+        </div>
+
+      </div><!-- /carousel-wrapper -->
+    </section>
+
+    <!-- ─── DIVIDER ───────────────────────────── -->
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-line"></span>
+      <span class="divider-lotus">🕊️</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <!-- ─── FOOTER ────────────────────────────── -->
+    <footer class="invitation-footer">
+      <div class="footer-ornament" aria-hidden="true">❧</div>
+
+      <div class="footer-logo-wrapper" aria-label="सुभाष &amp; मनीषा">
+        <img src="assets/images/Subash & Manisha Golden Wedding Logo.png" alt="सुभाष & मनीषा" class="footer-wedding-logo" />
+      </div>
+
+      <h2 class="footer-title">हमारे आनंद में सम्मिलित हों</h2>
+
+      <p class="footer-message">
+        आपकी मुस्कान, आपका स्नेह और आपका आशीर्वाद ही हमारे लिए सबसे बड़ा उपहार है।<br/>
+        आइए, हमारी इस अनमोल याद का हिस्सा बनिए।
+      </p>
+
+      <p class="footer-warmly">
+        सस्नेह एवं सादर,<br/>
+        <strong>सुभाष &amp; मनीषा</strong>
+      </p>
+
+      <!-- WhatsApp Share -->
+      <a href="https://wa.me/?text=%E0%A4%B8%E0%A5%81%E0%A4%AD%E0%A4%BE%E0%A4%B7+%26+%E0%A4%AE%E0%A4%A8%E0%A5%80%E0%A4%B7%E0%A4%BE+%E0%A4%95%E0%A5%87+%E0%A4%B5%E0%A4%BF%E0%A4%B5%E0%A4%BE%E0%A4%B9+%E0%A4%95%E0%A4%BE+%E0%A4%AA%E0%A4%BE%E0%A4%B5%E0%A4%A8+%E0%A4%A8%E0%A4%BF%E0%A4%AE%E0%A4%82%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%A3%F0%9F%92%AB%0A%0A%F0%9F%93%85+%E0%A4%A4%E0%A4%BF%E0%A4%A5%E0%A4%BF%3A+10+%E0%A4%AB%E0%A4%BC%E0%A4%B0%E0%A4%B5%E0%A4%B0%E0%A5%80%2C+2027%0A%F0%9F%93%8D+%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A4%BE%E0%A4%A8%3A+%E0%A4%B8%E0%A4%B2%E0%A5%87%E0%A4%AE%2C+%E0%A4%A4%E0%A4%AE%E0%A4%BF%E0%A4%B2%E0%A4%A8%E0%A4%BE%E0%A4%A1%E0%A5%81%0A%0A%E0%A4%86%E0%A4%AA+%E0%A4%B8%E0%A4%AA%E0%A4%B0%E0%A4%BF%E0%A4% warmth+%E0%A4%B8%E0%A4%BE%E0%A4%A6%E0%A4%B0+%E0%A4%86%E0%A4%AE%E0%A4%82%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%A4+%E0%A4%B9%E0%A5%88%E0%A4%82%21+%F0%9F%8C%B8"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="whatsapp-btn"
+         aria-label="व्हाट्सएप पर विवाह निमंत्रण साझा करें">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span>व्हाट्सएप पर साझा करें</span>
+      </a>
+
+      <div class="footer-bottom">
+        <p class="footer-made">सुभाष &amp; मनीषा के लिए ❤️ प्रेमपूर्वक निर्मित</p>
+        <p class="footer-year">© 2027 — प्रेम और समर्पण का उत्सव</p>
+      </div>
+
+      <div class="footer-ornament bottom" aria-hidden="true">❧</div>
+    </footer>
+
+  </main><!-- /invitation-card -->
+
+  <!-- Scroll-to-top button -->
+  <button class="scroll-top" id="scrollTop" aria-label="ऊपर जाएँ" title="ऊपर जाएँ">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
